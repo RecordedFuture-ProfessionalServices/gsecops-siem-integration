@@ -91,6 +91,14 @@ You will need to create a custom parser based on the existing Recorded Future pa
 
 You can create URL rules in the Google Secops console by navigating to Detection->Rules & Detections->Rules Editor->New. We've provided four YARA-L rules in the `correlation_rules` directory to import. After creating the rules, make sure to activate them and set them to a run frequency of at least once daily
 
+You can also install our correlation rules useing the new [Google SecOps CLI](https://github.com/google/secops-wrapper/blob/main/CLI.md) using `secops rule create --file path/to/file.yaral`. To install all of our correlation rules
+
+```
+for f in correlation_rules/*; do
+    secops rule create --file $f
+done
+```
+
 
 ### Install Dashboards
 
