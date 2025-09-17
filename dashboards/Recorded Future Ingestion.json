@@ -2,7 +2,7 @@
     "dashboards": [
         {
             "dashboard": {
-                "name": "09d3a002-2108-467c-95ed-4f5592cf3e56",
+                "name": "402da5ee-df3e-4c7f-bf78-89b4447b4f8c",
                 "displayName": "Recorded Future Ingestion",
                 "description": "Recorded Future Indicator ingestion metrics",
                 "definition": {
@@ -21,15 +21,15 @@
                             ],
                             "displayName": "Global Time Filter",
                             "chartIds": [
-                                "883ff041-6f21-443a-9961-4df279d03700",
-                                "435e0822-de46-4379-b645-2886322c3f03",
-                                "0eb8b9b5-62c8-4209-b76d-b1144b192f20",
-                                "285bad83-c6d5-4113-88d0-9d5dbced98e9",
-                                "12bd311c-61a8-4a1c-b420-d047b20ddc0a",
-                                "95261ad0-5442-4765-ad69-b5d1459d5cf3",
-                                "28ba9959-9195-454c-ab5c-27be058cb83b",
-                                "bc48a14f-801f-4fa6-b894-10013f49a16c",
-                                "7c2aa977-a279-4f69-8b91-d18c819b3c3c"
+                                "1014bab5-9b23-450f-a89a-1007e153ace7",
+                                "8a6913c9-af68-42b1-946c-c7d6e66035ff",
+                                "0acab5f2-f016-46a6-a6b2-8f7fabcf7958",
+                                "8e90b259-2ce3-4fe0-b893-4ee496541354",
+                                "514ea05b-98bc-4271-b603-603b12bb7d38",
+                                "a98e7bf1-f71b-4b5a-9507-68f6141ce85e",
+                                "79cd9ca4-fd42-4c9e-a936-27f06a29bfb9",
+                                "64e11457-31ca-480a-abbc-e9f05fc7d474",
+                                "91ce47a5-a449-40fb-a5f8-240a831fa739"
                             ],
                             "isStandardTimeRangeFilter": true,
                             "isStandardTimeRangeFilterEnabled": true
@@ -37,7 +37,7 @@
                     ],
                     "charts": [
                         {
-                            "dashboardChart": "3010e54e-58f6-4413-b755-0ca9458bd9f4",
+                            "dashboardChart": "289ba819-3d37-4c1e-a8b3-23b0492671de",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 96,
@@ -46,7 +46,7 @@
                             }
                         },
                         {
-                            "dashboardChart": "12bd311c-61a8-4a1c-b420-d047b20ddc0a",
+                            "dashboardChart": "514ea05b-98bc-4271-b603-603b12bb7d38",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 96,
@@ -58,7 +58,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "28ba9959-9195-454c-ab5c-27be058cb83b",
+                            "dashboardChart": "79cd9ca4-fd42-4c9e-a936-27f06a29bfb9",
                             "chartLayout": {
                                 "startX": 23,
                                 "spanX": 23,
@@ -70,7 +70,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "95261ad0-5442-4765-ad69-b5d1459d5cf3",
+                            "dashboardChart": "a98e7bf1-f71b-4b5a-9507-68f6141ce85e",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 23,
@@ -82,7 +82,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "883ff041-6f21-443a-9961-4df279d03700",
+                            "dashboardChart": "1014bab5-9b23-450f-a89a-1007e153ace7",
                             "chartLayout": {
                                 "startX": 46,
                                 "spanX": 24,
@@ -94,7 +94,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "bc48a14f-801f-4fa6-b894-10013f49a16c",
+                            "dashboardChart": "64e11457-31ca-480a-abbc-e9f05fc7d474",
                             "chartLayout": {
                                 "startX": 70,
                                 "spanX": 26,
@@ -106,7 +106,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "05be064d-7ee7-4af9-b604-115db6dbbab0",
+                            "dashboardChart": "438c115c-6a9f-44ec-91d8-38509024aa42",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 96,
@@ -115,7 +115,7 @@
                             }
                         },
                         {
-                            "dashboardChart": "435e0822-de46-4379-b645-2886322c3f03",
+                            "dashboardChart": "8a6913c9-af68-42b1-946c-c7d6e66035ff",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 30,
@@ -127,7 +127,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "0eb8b9b5-62c8-4209-b76d-b1144b192f20",
+                            "dashboardChart": "0acab5f2-f016-46a6-a6b2-8f7fabcf7958",
                             "chartLayout": {
                                 "startX": 30,
                                 "spanX": 30,
@@ -139,7 +139,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "7c2aa977-a279-4f69-8b91-d18c819b3c3c",
+                            "dashboardChart": "91ce47a5-a449-40fb-a5f8-240a831fa739",
                             "chartLayout": {
                                 "startX": 60,
                                 "spanX": 36,
@@ -151,7 +151,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "285bad83-c6d5-4113-88d0-9d5dbced98e9",
+                            "dashboardChart": "8e90b259-2ce3-4fe0-b893-4ee496541354",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 96,
@@ -165,16 +165,16 @@
                     ]
                 },
                 "type": "CUSTOM",
-                "etag": "3b0a2ac83dfd426315e2a4973b70c50218a111bde4f86076d7654f33778be9e0",
+                "etag": "0258c314667fa4f5919cc27c4cb33b7253bd65ad4a0a0d51084e8738999a38c1",
                 "access": "DASHBOARD_PRIVATE"
             },
             "dashboardCharts": [
                 {
-                    "name": "bc48a14f-801f-4fa6-b894-10013f49a16c",
-                    "displayName": "Most Malicious URLs",
-                    "description": "Top 10 Malicious URLs",
+                    "name": "1014bab5-9b23-450f-a89a-1007e153ace7",
+                    "displayName": "Most Malicious Hashes",
+                    "description": "Top 10 Malicious Hashes",
                     "chartDatasource": {
-                        "dashboardQuery": "e87b9f39-3193-48dc-b85f-24fa06bde471",
+                        "dashboardQuery": "ddd651fd-1972-4dec-9472-c9174cb674a0",
                         "dataSources": [
                             "ENTITY"
                         ]
@@ -197,8 +197,8 @@
                         ],
                         "columnDefs": [
                             {
-                                "field": "url",
-                                "header": "URL"
+                                "field": "hash",
+                                "header": "Hash"
                             },
                             {
                                 "field": "riskScore",
@@ -208,17 +208,17 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "e96e496199332f5539ee5eb9b5ad9c35708bd50b246dec610ae210fce8123812",
+                    "etag": "afe680e92456b8196cbc132dc1f41a77f25e26d8aea7211682425b4a5dcc21d7",
                     "drillDownConfig": {
                         "leftDrillDowns": [
                             {
                                 "id": "8E8CE817-546B-4829-9920-FBD3F1717228",
-                                "displayName": "Open In SIEM Search",
+                                "displayName": "Open In SIEM Search SHA256",
                                 "customSettings": {
                                     "newTab": true,
-                                    "leftClickColumn": "url",
+                                    "leftClickColumn": "hash",
                                     "query": {
-                                        "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.entity.url = ${url}"
+                                        "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.entity.file.sha256 = ${hash}"
                                     }
                                 }
                             }
@@ -230,7 +230,7 @@
                                 "customSettings": {
                                     "newTab": true,
                                     "externalLink": {
-                                        "link": "https://app.recordedfuture.com/portal/intelligence-card/url:${url}/overview"
+                                        "link": "https://app.recordedfuture.com/portal/intelligence-card/hash:${hash}/overview"
                                     }
                                 }
                             }
@@ -238,25 +238,11 @@
                     }
                 },
                 {
-                    "name": "3010e54e-58f6-4413-b755-0ca9458bd9f4",
-                    "displayName": "markdown",
-                    "visualization": {
-                        "markdown": {
-                            "content": "### Recorded Future Indicator Details",
-                            "properties": {
-                                "backgroundColor": "#1B3663"
-                            }
-                        }
-                    },
-                    "tileType": "TILE_TYPE_MARKDOWN",
-                    "etag": "837e33d4fa8be869f859218dbc3a338420ffa72c56cc686cac247c7f85297620"
-                },
-                {
-                    "name": "435e0822-de46-4379-b645-2886322c3f03",
+                    "name": "8a6913c9-af68-42b1-946c-c7d6e66035ff",
                     "displayName": "Recorded Future Indicator Total",
                     "description": "Total number of indicators ingested",
                     "chartDatasource": {
-                        "dashboardQuery": "1e714799-fdf7-41d3-a27f-4d335ede4bdc",
+                        "dashboardQuery": "a10b2912-465e-46b6-8b77-aa8b7920b233",
                         "dataSources": [
                             "ENTITY"
                         ]
@@ -292,14 +278,65 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "cb4edc41d8857487774513ced58896a1d69855c0512769f1819870380501288c",
+                    "etag": "090aec78c481133f1de2ae8f862ff2f9e44e56befbf7b7bb9e9356d40cf5452b",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "285bad83-c6d5-4113-88d0-9d5dbced98e9",
+                    "name": "0acab5f2-f016-46a6-a6b2-8f7fabcf7958",
+                    "displayName": "Recorded Future Indicator Count",
+                    "chartDatasource": {
+                        "dashboardQuery": "7985b756-1a4e-4192-a178-8c71033e4cd1",
+                        "dataSources": [
+                            "ENTITY"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesType": "PIE",
+                                "encode": {
+                                    "value": "total",
+                                    "itemName": "entityType"
+                                },
+                                "dataLabel": {
+                                    "show": true
+                                },
+                                "radius": [
+                                    "40%",
+                                    "70%"
+                                ],
+                                "itemStyle": {
+                                    "color": "undefined"
+                                }
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "top": 12,
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "a3a732fdd005d00555fb8921acbfac249f32a6db94ce81b0a991c2b477998662",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "8e90b259-2ce3-4fe0-b893-4ee496541354",
                     "displayName": "Recorded Future Indicator Ingestion",
                     "chartDatasource": {
-                        "dashboardQuery": "3a25b256-9d09-449a-903c-3356fbf136de",
+                        "dashboardQuery": "f80685a7-eff1-421c-afec-65218240eca1",
                         "dataSources": [
                             "INGESTION_METRICS"
                         ]
@@ -353,15 +390,15 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "6093e0633a78c9e6a8df877899a9c3a73bf2bbd29ce9f370f21240546833c216",
+                    "etag": "573dd2edee9f2c9aa7fe5099e09e52c27fd32469427e6868d9b2a9c588ca0fca",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "95261ad0-5442-4765-ad69-b5d1459d5cf3",
+                    "name": "a98e7bf1-f71b-4b5a-9507-68f6141ce85e",
                     "displayName": "Most Malicious IPs",
                     "description": "Top 10 Malicious IPs",
                     "chartDatasource": {
-                        "dashboardQuery": "e811a323-eac5-4d28-ba3d-bca71fc1accd",
+                        "dashboardQuery": "bf5a283d-8e5f-40b0-a2d4-5028e6e80609",
                         "dataSources": [
                             "ENTITY"
                         ]
@@ -395,7 +432,7 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "b1214e4aa33fe631e6046fd5482b5b3f5f2c114d9f93f001f46a6063a36f4a56",
+                    "etag": "bb0c600ece9464b4c8902717e7425909259b21a33f5afc971e8a01da7043550c",
                     "drillDownConfig": {
                         "leftDrillDowns": [
                             {
@@ -425,10 +462,10 @@
                     }
                 },
                 {
-                    "name": "7c2aa977-a279-4f69-8b91-d18c819b3c3c",
+                    "name": "91ce47a5-a449-40fb-a5f8-240a831fa739",
                     "displayName": "Ingestion by Entity Type and Date",
                     "chartDatasource": {
-                        "dashboardQuery": "279c0f42-857a-4c5b-99ab-50b34f5dcaf8",
+                        "dashboardQuery": "02ae1d9a-7b76-4d28-8fde-54b3964424e1",
                         "dataSources": [
                             "ENTITY"
                         ]
@@ -512,29 +549,15 @@
                         "groupingType": "Grouped"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "efa0380e397288570c8ac273dfc54c4f0584db9c99aabda0b75d450f5d10cde8",
+                    "etag": "615d75a33f4295beef48d5876e40d9f8a8c31d649c35ec32a7bc06e6823993d3",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "05be064d-7ee7-4af9-b604-115db6dbbab0",
-                    "displayName": "markdown",
-                    "visualization": {
-                        "markdown": {
-                            "content": "### Recorded Future Indicator Ingestion Stats",
-                            "properties": {
-                                "backgroundColor": "#1B3663"
-                            }
-                        }
-                    },
-                    "tileType": "TILE_TYPE_MARKDOWN",
-                    "etag": "fa52a67186129cec7a9d9666ef545e05d3bd0ca398a8ba888cb34badc6e0b96d"
-                },
-                {
-                    "name": "883ff041-6f21-443a-9961-4df279d03700",
-                    "displayName": "Most Malicious Hashes",
-                    "description": "Top 10 Malicious Hashes",
+                    "name": "64e11457-31ca-480a-abbc-e9f05fc7d474",
+                    "displayName": "Most Malicious URLs",
+                    "description": "Top 10 Malicious URLs",
                     "chartDatasource": {
-                        "dashboardQuery": "9c5ea937-7fd0-442f-943f-afd5a64e545c",
+                        "dashboardQuery": "aa25db6a-d433-4408-aba6-f4ebb4a1e3c6",
                         "dataSources": [
                             "ENTITY"
                         ]
@@ -557,8 +580,8 @@
                         ],
                         "columnDefs": [
                             {
-                                "field": "hash",
-                                "header": "Hash"
+                                "field": "url",
+                                "header": "URL"
                             },
                             {
                                 "field": "riskScore",
@@ -568,7 +591,7 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "43b218ce29c8f864785014d1312bcd592909147c2a93312da18b432f710c5002",
+                    "etag": "66c3bdc70cd08e934d82db8487cf9c4185d7970a4028d462efe0595ef9b090a8",
                     "drillDownConfig": {
                         "leftDrillDowns": [
                             {
@@ -576,9 +599,9 @@
                                 "displayName": "Open In SIEM Search",
                                 "customSettings": {
                                     "newTab": true,
-                                    "leftClickColumn": "hash",
+                                    "leftClickColumn": "url",
                                     "query": {
-                                        "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.entity.file.sha256 = ${hash}"
+                                        "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.entity.url = ${url}"
                                     }
                                 }
                             }
@@ -590,7 +613,7 @@
                                 "customSettings": {
                                     "newTab": true,
                                     "externalLink": {
-                                        "link": "https://app.recordedfuture.com/portal/intelligence-card/hash:${hash}/overview"
+                                        "link": "https://app.recordedfuture.com/portal/intelligence-card/url:${url}/overview"
                                     }
                                 }
                             }
@@ -598,62 +621,25 @@
                     }
                 },
                 {
-                    "name": "0eb8b9b5-62c8-4209-b76d-b1144b192f20",
-                    "displayName": "Recorded Future Indicator Count",
-                    "chartDatasource": {
-                        "dashboardQuery": "b580a191-73b1-48f7-9f11-641b97e4630a",
-                        "dataSources": [
-                            "ENTITY"
-                        ]
-                    },
+                    "name": "289ba819-3d37-4c1e-a8b3-23b0492671de",
+                    "displayName": "markdown",
                     "visualization": {
-                        "series": [
-                            {
-                                "seriesType": "PIE",
-                                "encode": {
-                                    "value": "total",
-                                    "itemName": "entityType"
-                                },
-                                "dataLabel": {
-                                    "show": true
-                                },
-                                "radius": [
-                                    "40%",
-                                    "70%"
-                                ],
-                                "itemStyle": {
-                                    "color": "undefined"
-                                }
+                        "markdown": {
+                            "content": "### Recorded Future Indicator Details",
+                            "properties": {
+                                "backgroundColor": "#1B3663"
                             }
-                        ],
-                        "xAxes": [
-                            {
-                                "axisType": "VALUE"
-                            }
-                        ],
-                        "yAxes": [
-                            {
-                                "axisType": "VALUE"
-                            }
-                        ],
-                        "legends": [
-                            {
-                                "top": 12,
-                                "legendOrient": "HORIZONTAL"
-                            }
-                        ],
-                        "groupingType": "Off"
+                        }
                     },
-                    "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "32c1bacd1c918b1b53a1ec3694bc5d6daf2abfedf6ad3179b6ff7fbab4e1d6d7",
-                    "drillDownConfig": {}
+                    "tileType": "TILE_TYPE_MARKDOWN",
+                    "etag": "bab4605da708952e90da46641d895793cc921a105e2c5cf7bc97c88007f85b41"
                 },
                 {
-                    "name": "12bd311c-61a8-4a1c-b420-d047b20ddc0a",
+                    "name": "514ea05b-98bc-4271-b603-603b12bb7d38",
                     "displayName": "Top Risk Rules",
                     "description": "Top Risk Rules from all ingested indicators",
                     "chartDatasource": {
-                        "dashboardQuery": "f78ac801-2446-420d-99fe-453e138a6ef9",
+                        "dashboardQuery": "85ce0266-33cf-4a36-b5dd-5e080efe0f01",
                         "dataSources": [
                             "ENTITY"
                         ]
@@ -661,7 +647,7 @@
                     "visualization": {
                         "series": [
                             {
-                                "seriesName": "none",
+                                "seriesName": "Unspecified",
                                 "seriesType": "BAR",
                                 "encode": {
                                     "x": "total",
@@ -671,7 +657,7 @@
                                 "itemStyle": {
                                     "color": "#1a73e8"
                                 },
-                                "seriesUniqueValue": "none"
+                                "seriesUniqueValue": "undefined"
                             }
                         ],
                         "xAxes": [
@@ -694,7 +680,7 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "504d3df755a86b9bead610d0a56885b644d78b7cd2ac9dc84c8f86c9bd3aa665",
+                    "etag": "4a54de9c18be7b1f15903dbe15235310c60e73de4f4f8c6c1ca09c1fd4060639",
                     "drillDownConfig": {
                         "leftDrillDowns": [
                             {
@@ -711,11 +697,11 @@
                     }
                 },
                 {
-                    "name": "28ba9959-9195-454c-ab5c-27be058cb83b",
+                    "name": "79cd9ca4-fd42-4c9e-a936-27f06a29bfb9",
                     "displayName": "Most Malicious Domains",
                     "description": "Top 10 Malicious Domains",
                     "chartDatasource": {
-                        "dashboardQuery": "406340bb-8bf6-4c67-93a6-3713292d14a2",
+                        "dashboardQuery": "5c4c0b77-302b-4c3a-b561-6220f3d24633",
                         "dataSources": [
                             "ENTITY"
                         ]
@@ -749,7 +735,7 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "5b9359c7dd30e9a0a162d2677595a7509da8224723afea2b32411578a8370fd8",
+                    "etag": "92dbe9ecd27c02217d2701676113c8d41824142fe5a4ccbea81de7933ed67b03",
                     "drillDownConfig": {
                         "leftDrillDowns": [
                             {
@@ -777,22 +763,25 @@
                             }
                         ]
                     }
+                },
+                {
+                    "name": "438c115c-6a9f-44ec-91d8-38509024aa42",
+                    "displayName": "markdown",
+                    "visualization": {
+                        "markdown": {
+                            "content": "### Recorded Future Indicator Ingestion Stats",
+                            "properties": {
+                                "backgroundColor": "#1B3663"
+                            }
+                        }
+                    },
+                    "tileType": "TILE_TYPE_MARKDOWN",
+                    "etag": "b149530ee5deb049b2c5f7d2d9c24320becc2149c8be3ba6390c97c7bf30bcbf"
                 }
             ],
             "dashboardQueries": [
                 {
-                    "name": "9c5ea937-7fd0-442f-943f-afd5a64e545c",
-                    "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = \"FILE\"\ngraph.entity.file.sha256 = $hash\n\nmatch:\n  $hash\noutcome:\n  $riskScore = max(graph.metadata.threat.risk_score)\norder:\n  $riskScore desc\nlimit:\n  10",
-                    "input": {
-                        "relativeTime": {
-                            "timeUnit": "DAY",
-                            "startTimeVal": "1"
-                        }
-                    },
-                    "etag": "3db616165d2610f3015dc640f5155e828edb9aa5812eef1028994d662ea34669"
-                },
-                {
-                    "name": "1e714799-fdf7-41d3-a27f-4d335ede4bdc",
+                    "name": "a10b2912-465e-46b6-8b77-aa8b7920b233",
                     "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = $entityType\nmatch:\n  $entityType\noutcome:\n  $total = count(graph.metadata.product_entity_id)",
                     "input": {
                         "relativeTime": {
@@ -800,21 +789,10 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "eb184a581818fe2a048c046216042a6754fbfb1a34444c0c44d1306c52f6fb6f"
+                    "etag": "3c8257924b0ae15d5e712f09a1b5327a0b4c605467e4b36fd3e1181f0cb5b5a0"
                 },
                 {
-                    "name": "b580a191-73b1-48f7-9f11-641b97e4630a",
-                    "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = $entityType\nmatch:\n  $entityType\noutcome:\n  $total = count(graph.metadata.product_entity_id)\norder:\n  $total desc\nlimit:\n  100",
-                    "input": {
-                        "relativeTime": {
-                            "timeUnit": "DAY",
-                            "startTimeVal": "1"
-                        }
-                    },
-                    "etag": "eda9320a56599eb1310282d4a20a0f87cbfa24bc84b3f205547ff9cd88863f77"
-                },
-                {
-                    "name": "3a25b256-9d09-449a-903c-3356fbf136de",
+                    "name": "f80685a7-eff1-421c-afec-65218240eca1",
                     "query": "$Log_Type = $event.ingestion.log_type\n$Log_Type = \"RECORDED_FUTURE_IOC\"\nmatch:\n    $Log_Type\noutcome:\n    $Total_Size_Bytes = sum(if($event.ingestion.component = \"Ingestion API\", $event.ingestion.log_volume, 0))\n    $Total_Logs = sum(if($event.ingestion.component = \"Ingestion API\", $event.ingestion.log_count, 0))\n    $Total_Normalized_Events = sum(if($event.ingestion.component = \"Normalizer\" AND $event.ingestion.state = \"validated\", $event.ingestion.event_count, 0))\n    $Total_Parsing_Error_Events = sum(if($event.ingestion.component = \"Normalizer\" AND $event.ingestion.state = \"failed_parsing\", $event.ingestion.log_count, 0))\n    $Total_Validation_Error_Events = sum(if($event.ingestion.component = \"Normalizer\" AND $event.ingestion.state = \"failed_validation\", $event.ingestion.event_count, 0))\n    $Total_Indexing_Error_Events = sum(if($event.ingestion.component = \"Normalizer\" AND $event.ingestion.state = \"failed_indexing\", $event.ingestion.log_count, 0))\norder:\n    $Total_Size_Bytes desc\nlimit:\n    50 \n",
                     "input": {
                         "relativeTime": {
@@ -822,10 +800,21 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "eb518370de48c5abeb9d619d35dd45df204cd161d3ef5662f712ca0f34fb333a"
+                    "etag": "73b4836ed0ae4d18b22d4a2c2a3b3876e5d2632652da7f543ac2a20305ebb131"
                 },
                 {
-                    "name": "e811a323-eac5-4d28-ba3d-bca71fc1accd",
+                    "name": "85ce0266-33cf-4a36-b5dd-5e080efe0f01",
+                    "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.threat.rule_name = $riskRules\ngraph.metadata.threat.severity = $severity\nmatch:\n    $riskRules, $severity\n\noutcome:\n    $total = count($riskRules)\n\norder:\n    $severity desc,\n    $total desc\nlimit:\n    10",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "1"
+                        }
+                    },
+                    "etag": "c55f5c64078aa78a50bf29ed6b9003ccbf32e034a8b01178e0d8f1ca9cb942dd"
+                },
+                {
+                    "name": "bf5a283d-8e5f-40b0-a2d4-5028e6e80609",
                     "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = \"IP_ADDRESS\"\ngraph.entity.ip = $ip\n\nmatch:\n  $ip\noutcome:\n  $riskScore = max(graph.metadata.threat.risk_score)\norder:\n  $riskScore desc\nlimit:\n  10",
                     "input": {
                         "relativeTime": {
@@ -833,10 +822,10 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "22bab7926f66decbbf1f5159578c256455c0613de11bef97286c7b1104261500"
+                    "etag": "b9ee8d14c2c83f2f3a5bb9ec00bedbbe4f1a8d4a5a7286e665f70e6b60288412"
                 },
                 {
-                    "name": "279c0f42-857a-4c5b-99ab-50b34f5dcaf8",
+                    "name": "02ae1d9a-7b76-4d28-8fde-54b3964424e1",
                     "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = $entityType\ngraph.metadata.collected_timestamp.seconds > timestamp.current_seconds()-604800\ntimestamp.get_date(graph.metadata.collected_timestamp.seconds) = $date\n\nmatch:\n    $entityType, $date\noutcome:\n    $count=count($entityType)",
                     "input": {
                         "relativeTime": {
@@ -844,10 +833,10 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "deafd9fa4616b39ea39d69c8c715942d8cc754eceb5dc766dab055bb7ef74bbf"
+                    "etag": "ad84652c957843328fcf6dc6a305d53fa626d9f72a9b33961d14f6434d913ae8"
                 },
                 {
-                    "name": "406340bb-8bf6-4c67-93a6-3713292d14a2",
+                    "name": "5c4c0b77-302b-4c3a-b561-6220f3d24633",
                     "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = \"DOMAIN_NAME\"\ngraph.entity.hostname = $hostname\n\nmatch:\n  $hostname\noutcome:\n  $riskScore = max(graph.metadata.threat.risk_score)\norder:\n  $riskScore desc\nlimit:\n  10",
                     "input": {
                         "relativeTime": {
@@ -855,21 +844,10 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "629fa473da660d8260c186589946c07dbc628a974626dad8b78a3d86d99d018e"
+                    "etag": "1fa7f8f7e926d7c556cf9fdeae3c049698ebbda64160589e47c01c470be32fdb"
                 },
                 {
-                    "name": "f78ac801-2446-420d-99fe-453e138a6ef9",
-                    "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.threat.rule_name = $riskRules\n\nmatch:\n    $riskRules\n\noutcome:\n    $total = count($riskRules)\n\norder:\n    $total desc\nlimit:\n    10",
-                    "input": {
-                        "relativeTime": {
-                            "timeUnit": "DAY",
-                            "startTimeVal": "1"
-                        }
-                    },
-                    "etag": "0ce9dda00d3081bbd2e1f41775e623fdc135c4aa8b3473d6ddc057f84200685c"
-                },
-                {
-                    "name": "e87b9f39-3193-48dc-b85f-24fa06bde471",
+                    "name": "aa25db6a-d433-4408-aba6-f4ebb4a1e3c6",
                     "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = \"URL\"\ngraph.entity.url = $url\n\nmatch:\n  $url\noutcome:\n  $riskScore = max(graph.metadata.threat.risk_score)\norder:\n  $riskScore desc\nlimit:\n  10",
                     "input": {
                         "relativeTime": {
@@ -877,7 +855,29 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "784f8ceb12427e3d21289f20406b26d0dcc7d0ca99a2776d38fcfbe7ead856e7"
+                    "etag": "c2375264f6ab133ca23c855ddbfea8d1525b6a8a2e7a64746a404b9c4765c11f"
+                },
+                {
+                    "name": "7985b756-1a4e-4192-a178-8c71033e4cd1",
+                    "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = $entityType\nmatch:\n  $entityType\noutcome:\n  $total = count(graph.metadata.product_entity_id)\norder:\n  $total desc\nlimit:\n  100",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "1"
+                        }
+                    },
+                    "etag": "5df7a434af9d875bcfe647b2c06528d19fd245b2062aa118cb9ab2a0084cf813"
+                },
+                {
+                    "name": "ddd651fd-1972-4dec-9472-c9174cb674a0",
+                    "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.metadata.entity_type = \"FILE\"\ngroup( graph.entity.file.sha256, graph.entity.file.sha1, graph.entity.file.md5 ) = $hash\n\nmatch:\n  $hash\noutcome:\n  $riskScore = max(graph.metadata.threat.risk_score)\norder:\n  $riskScore desc\nlimit:\n  10",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "1"
+                        }
+                    },
+                    "etag": "3319f52a7c4e1367dd45bed47f3d3e0d818bfecb3bb593d80723da794533426d"
                 }
             ]
         }
