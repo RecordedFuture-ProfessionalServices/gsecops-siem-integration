@@ -2,7 +2,7 @@
     "dashboards": [
         {
             "dashboard": {
-                "name": "027c6e1e-0f62-4917-b9d7-4ff8090801d8",
+                "name": "44285f4d-4b06-474f-a1b7-5347603fce51",
                 "displayName": "Recorded Future IOC Matches",
                 "description": "Dashboard tracking indicators from Recorded Future Risk Lists",
                 "definition": {
@@ -21,13 +21,13 @@
                             ],
                             "displayName": "Global Time Filter",
                             "chartIds": [
-                                "fb0c9f82-e056-4feb-b186-9bd14e21a43d",
-                                "5a8677f2-835f-4a16-9224-837c22033446",
-                                "b1f2f61e-16cd-42ad-b814-c7546b634ee0",
-                                "4e7c5a1f-b0f1-4917-b1d2-ec8ac17f58a2",
-                                "3426bae3-2811-402b-b718-a90578901c32",
-                                "30770f45-6a4d-4503-9d27-6c8aec8cea07",
-                                "bf5f10e1-8ccf-416b-b1dd-04d84626f7fc"
+                                "2c13dd98-1933-4806-b862-b29b1884368f",
+                                "dceaa663-1ba0-4bb5-8e96-587d22cf4c32",
+                                "873e1e99-3478-4230-80f6-38534fe583c8",
+                                "20cbb038-a04c-467d-8c17-a53ad68be284",
+                                "3597f863-a6bd-4328-a35c-437c702a4808",
+                                "2e03f8fa-11b5-40c4-8b5d-a326bb3a9aa5",
+                                "cc2f906d-d1dd-4648-97be-679de6ef6d4d"
                             ],
                             "isStandardTimeRangeFilter": true,
                             "isStandardTimeRangeFilterEnabled": true
@@ -35,7 +35,7 @@
                     ],
                     "charts": [
                         {
-                            "dashboardChart": "fb0c9f82-e056-4feb-b186-9bd14e21a43d",
+                            "dashboardChart": "2c13dd98-1933-4806-b862-b29b1884368f",
                             "chartLayout": {
                                 "startX": 28,
                                 "spanX": 28,
@@ -47,7 +47,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "3426bae3-2811-402b-b718-a90578901c32",
+                            "dashboardChart": "3597f863-a6bd-4328-a35c-437c702a4808",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 96,
@@ -59,7 +59,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "3c2eb3a6-b98d-4542-92ef-6c62b0fdbda6",
+                            "dashboardChart": "376d06be-b5d6-47e3-85ed-3c06bb7cc538",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 96,
@@ -68,7 +68,7 @@
                             }
                         },
                         {
-                            "dashboardChart": "4e7c5a1f-b0f1-4917-b1d2-ec8ac17f58a2",
+                            "dashboardChart": "20cbb038-a04c-467d-8c17-a53ad68be284",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 28,
@@ -80,7 +80,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "b1f2f61e-16cd-42ad-b814-c7546b634ee0",
+                            "dashboardChart": "873e1e99-3478-4230-80f6-38534fe583c8",
                             "chartLayout": {
                                 "startX": 56,
                                 "spanX": 40,
@@ -92,7 +92,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "5a8677f2-835f-4a16-9224-837c22033446",
+                            "dashboardChart": "dceaa663-1ba0-4bb5-8e96-587d22cf4c32",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 96,
@@ -104,7 +104,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "bf5f10e1-8ccf-416b-b1dd-04d84626f7fc",
+                            "dashboardChart": "cc2f906d-d1dd-4648-97be-679de6ef6d4d",
                             "chartLayout": {
                                 "startX": 0,
                                 "spanX": 48,
@@ -116,7 +116,7 @@
                             ]
                         },
                         {
-                            "dashboardChart": "30770f45-6a4d-4503-9d27-6c8aec8cea07",
+                            "dashboardChart": "2e03f8fa-11b5-40c4-8b5d-a326bb3a9aa5",
                             "chartLayout": {
                                 "startX": 48,
                                 "spanX": 48,
@@ -130,16 +130,16 @@
                     ]
                 },
                 "type": "CUSTOM",
-                "etag": "3acf420f79a744bb0c551db2ac17b1c0b03f22a1b32cfd4a20224cbd180ad2f2",
+                "etag": "8ab618e33a65864b0c6035748bd2afe10569e815fe22f73a342860ed57145818",
                 "access": "DASHBOARD_PRIVATE"
             },
             "dashboardCharts": [
                 {
-                    "name": "30770f45-6a4d-4503-9d27-6c8aec8cea07",
+                    "name": "2e03f8fa-11b5-40c4-8b5d-a326bb3a9aa5",
                     "displayName": "Most Malicious Domain Matches by Count",
                     "description": "Table of the most malicious Domain Matches against the number of matches for the global time filter",
                     "chartDatasource": {
-                        "dashboardQuery": "bbff5f0e-1ab2-4b52-9125-909d01813129",
+                        "dashboardQuery": "cfe523bf-ddc4-4afd-962e-0c42d5706864",
                         "dataSources": [
                             "IOC_MATCHES"
                         ]
@@ -170,14 +170,18 @@
                                 "header": "Risk Score"
                             },
                             {
-                                "field": "count",
-                                "header": "Matches"
+                                "field": "matches",
+                                "header": "Total Matches"
+                            },
+                            {
+                                "field": "assets",
+                                "header": "Distinct Assets"
                             }
                         ],
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "cf2c0e38392473cefd96fdd8442ee6a79842c4ec839ae707d7ce880d61f72f7c",
+                    "etag": "bb950a882ad82b44875690f7cb2ed4cbd8108d57199421af2dbe47d2fcdb17ad",
                     "drillDownConfig": {
                         "leftDrillDowns": [
                             {
@@ -207,10 +211,10 @@
                     }
                 },
                 {
-                    "name": "3426bae3-2811-402b-b718-a90578901c32",
+                    "name": "3597f863-a6bd-4328-a35c-437c702a4808",
                     "displayName": "Recorded Future Rule Detections",
                     "chartDatasource": {
-                        "dashboardQuery": "0fd9fa74-51e9-4f50-a49e-6885aafd36ad",
+                        "dashboardQuery": "e7370ee0-dda5-4bac-aa54-c3f64f06e26b",
                         "dataSources": [
                             "RULE_DETECTIONS"
                         ]
@@ -281,14 +285,14 @@
                         "groupingType": "Grouped"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "193e4d71d180b3601491129740026a220b6fd22a755b37919a690de52b0f1faf",
+                    "etag": "b416e91a15f7a4fb58afda90be769082e2c24039a43da6437d80d85c4050ad4d",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "4e7c5a1f-b0f1-4917-b1d2-ec8ac17f58a2",
+                    "name": "20cbb038-a04c-467d-8c17-a53ad68be284",
                     "displayName": "Recorded Future IOC Match Count",
                     "chartDatasource": {
-                        "dashboardQuery": "3f0d8195-6db4-4597-b40d-a397c4521fbf",
+                        "dashboardQuery": "2b88ce6c-1afe-4b71-ad4c-93e21af6fc2c",
                         "dataSources": [
                             "IOC_MATCHES"
                         ]
@@ -324,11 +328,11 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "38280812dc9706b25988737a1b50f281f6cd8e3fbdd7fc22ec88055a1aedf163",
+                    "etag": "446d6fe9a4d400303a5374ae7d2b7d8244f5008d286903b4e40d77917d5bc42f",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "3c2eb3a6-b98d-4542-92ef-6c62b0fdbda6",
+                    "name": "376d06be-b5d6-47e3-85ed-3c06bb7cc538",
                     "displayName": "markdown",
                     "visualization": {
                         "markdown": {
@@ -339,13 +343,13 @@
                         }
                     },
                     "tileType": "TILE_TYPE_MARKDOWN",
-                    "etag": "c7872c46b192843b2916b2d1b461076fd2c69f379bb791c72859c4b57fb7e3e5"
+                    "etag": "6ab3361f991044b5a6805c614503125227674a6a2eec9e2067bc0a5d63e18ce4"
                 },
                 {
-                    "name": "fb0c9f82-e056-4feb-b186-9bd14e21a43d",
+                    "name": "2c13dd98-1933-4806-b862-b29b1884368f",
                     "displayName": "Recorded Future IOC Matches",
                     "chartDatasource": {
-                        "dashboardQuery": "2739866b-28ac-4671-8050-28e1f9ec425c",
+                        "dashboardQuery": "7475f816-a283-46f5-867a-fb44f0be02b5",
                         "dataSources": [
                             "IOC_MATCHES"
                         ]
@@ -407,14 +411,14 @@
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "5c3fffdc6119976cf82f56df4000418bea003767f4a63557d92181adf32dc536",
+                    "etag": "c4d30166f971a21ce677d85670b65b9427d5f63fe08213a7a27d9645390b445b",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "b1f2f61e-16cd-42ad-b814-c7546b634ee0",
+                    "name": "873e1e99-3478-4230-80f6-38534fe583c8",
                     "displayName": "Recorded Future IOC Matches by Risk Score",
                     "chartDatasource": {
-                        "dashboardQuery": "4ece8aac-4a1e-4479-87da-a2cba2a715fe",
+                        "dashboardQuery": "779d7ff3-73f8-4f76-b30c-f6da44a8e6b5",
                         "dataSources": [
                             "IOC_MATCHES"
                         ]
@@ -474,14 +478,14 @@
                         "groupingType": "Stacked"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "38935728a52755db619f7b99c96b8f7a28280f383b009d483b93d70f4c3611d5",
+                    "etag": "dfa2eef391337d4d5582c1dfd0ad866c8eb51516fafa4bb17b1b94cab8d038d3",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "5a8677f2-835f-4a16-9224-837c22033446",
+                    "name": "dceaa663-1ba0-4bb5-8e96-587d22cf4c32",
                     "displayName": "Recorded Future IOC Matches by Type",
                     "chartDatasource": {
-                        "dashboardQuery": "cfc6bcc9-7523-45f7-9a36-682fbc16b685",
+                        "dashboardQuery": "cba7b5dc-e2cb-492e-a1d3-1fbe4cd56306",
                         "dataSources": [
                             "IOC_MATCHES"
                         ]
@@ -539,15 +543,15 @@
                         "groupingType": "Grouped"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "e02d75a73a49f61a826191be5335ef8f154c7cf9378112bf1928273a9cbec5da",
+                    "etag": "f26b1d9ee02788ca0ae628151578746ff407d77c44c0e702b7246dbd2bd765b7",
                     "drillDownConfig": {}
                 },
                 {
-                    "name": "bf5f10e1-8ccf-416b-b1dd-04d84626f7fc",
+                    "name": "cc2f906d-d1dd-4648-97be-679de6ef6d4d",
                     "displayName": "Most Malicious IP Matches by Count",
                     "description": "Table of the most malicious IP Matches against the number of matches for the global time filter",
                     "chartDatasource": {
-                        "dashboardQuery": "ddee3957-0f5e-4ec5-8252-4e71d33a52f6",
+                        "dashboardQuery": "191b2b98-867b-468c-ae41-70942e201484",
                         "dataSources": [
                             "IOC_MATCHES"
                         ]
@@ -578,14 +582,18 @@
                                 "header": "Risk Score"
                             },
                             {
-                                "field": "count",
-                                "header": "Count"
+                                "field": "alerts",
+                                "header": "Total Matches"
+                            },
+                            {
+                                "field": "assets",
+                                "header": "Distinct Assets"
                             }
                         ],
                         "groupingType": "Off"
                     },
                     "tileType": "TILE_TYPE_VISUALIZATION",
-                    "etag": "e150eb70e862eb7acc567d68d7f63f16e8c8a56e053ea9d0e88133309bcc49a5",
+                    "etag": "eb89a5370f72349464014df4cae9b961d32250d6c025398fae37c8b4297a64f4",
                     "drillDownConfig": {
                         "leftDrillDowns": [
                             {
@@ -617,29 +625,18 @@
             ],
             "dashboardQueries": [
                 {
-                    "name": "ddee3957-0f5e-4ec5-8252-4e71d33a52f6",
-                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = \"IOC_TYPE_IP\"\n\nioc.ioc_value = $ioc\nioc.confidence_score = $conf\n\nmatch:\n    $ioc, $conf\n\noutcome:\n    $count = count($ioc)\n\norder:\n    $conf desc,\n    $count desc\nlimit:\n    100",
+                    "name": "cfe523bf-ddc4-4afd-962e-0c42d5706864",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = \"IOC_TYPE_DOMAIN\"\n\nioc.ioc_value = $ioc\nioc.confidence_score = $conf\n$user = strings.coalesce( ioc.asset.hostname, ioc.asset.asset_ip_address )\n\nmatch:\n    $ioc, $conf\n\noutcome:\n    $matches = count($ioc)\n    $assets = count_distinct($user)\n\norder:\n    $conf desc,\n    $matches desc\nlimit:\n    100",
                     "input": {
                         "relativeTime": {
                             "timeUnit": "DAY",
                             "startTimeVal": "5"
                         }
                     },
-                    "etag": "d38225584b7b56cc785be1e0d281261a84cefa46e5495432bbb50a8b9e8325fc"
+                    "etag": "bf115d583ac7e3c4a708cf82cb63a18f5d0c6e14729969387dbf240b5f5179a6"
                 },
                 {
-                    "name": "bbff5f0e-1ab2-4b52-9125-909d01813129",
-                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = \"IOC_TYPE_DOMAIN\"\n\nioc.ioc_value = $ioc\nioc.confidence_score = $conf\n\nmatch:\n    $ioc, $conf\n\noutcome:\n    $count = count($ioc)\n\norder:\n    $conf desc,\n    $count desc\nlimit:\n    100",
-                    "input": {
-                        "relativeTime": {
-                            "timeUnit": "DAY",
-                            "startTimeVal": "5"
-                        }
-                    },
-                    "etag": "d93ab5bcfcb71444495283a7f59f6eda6e055a531b0d3ae963549331051e1139"
-                },
-                {
-                    "name": "0fd9fa74-51e9-4f50-a49e-6885aafd36ad",
+                    "name": "e7370ee0-dda5-4bac-aa54-c3f64f06e26b",
                     "query": "detection.detection.rule_name = /rf_*/ nocase\n\n$Name = detection.detection.rule_name\n$Date = timestamp.get_date(detection.created_time.seconds)\nmatch:\n    $Name, $Date\n\noutcome:\n    $Count = count(detection.id)\n\norder:\n    $Count desc",
                     "input": {
                         "relativeTime": {
@@ -647,10 +644,10 @@
                             "startTimeVal": "15"
                         }
                     },
-                    "etag": "a54fb94f28fa33393cb996270fe323d964a7ea3ec4ab77373ed3740266395dab"
+                    "etag": "288ed02c63d5ee867da523519117de0db0f5ca08725ee8f4012ac91b4858ec98"
                 },
                 {
-                    "name": "3f0d8195-6db4-4597-b40d-a397c4521fbf",
+                    "name": "2b88ce6c-1afe-4b71-ad4c-93e21af6fc2c",
                     "query": "ioc.feed_name = \"Recorded Future IOC\"\n\noutcome:\n    $count = count(ioc.ioc_value)",
                     "input": {
                         "relativeTime": {
@@ -658,10 +655,10 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "45c4deb210535fcf56ed8130427c41af177970a83631efc0193554a5312e5546"
+                    "etag": "fe2ab389dcf32bf5e6c91775c4bc32053390b28edd05acc2edc31918a411a145"
                 },
                 {
-                    "name": "2739866b-28ac-4671-8050-28e1f9ec425c",
+                    "name": "7475f816-a283-46f5-867a-fb44f0be02b5",
                     "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = $iocType\n\nmatch:\n    $iocType\noutcome:\n    $count = count(ioc.ioc_value)",
                     "input": {
                         "relativeTime": {
@@ -669,21 +666,21 @@
                             "startTimeVal": "1"
                         }
                     },
-                    "etag": "20f457413347019ce337290456e94b56b723450d1737b3f62161b2091717b632"
+                    "etag": "3376cac994cec695a7b84c155e1d5c7bdb40c02f852f0c5c9905563c2e44c5af"
                 },
                 {
-                    "name": "4ece8aac-4a1e-4479-87da-a2cba2a715fe",
-                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = $iocType\nioc.confidence_score = $conf\nioc.ioc_value = $ioc\n\nmatch:\n    $iocType, $conf\noutcome:\n    $count = count($ioc)\norder:\n    $conf desc",
+                    "name": "779d7ff3-73f8-4f76-b30c-f6da44a8e6b5",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = $iocType\nioc.confidence_score = $conf\nioc.ioc_value = $ioc\n$conf != \"\"\n\nmatch:\n    $iocType, $conf\noutcome:\n    $count = count($ioc)\norder:\n    $conf desc",
                     "input": {
                         "relativeTime": {
                             "timeUnit": "DAY",
                             "startTimeVal": "6"
                         }
                     },
-                    "etag": "5323ef1eab5c8988caaa1c4a7893b8925b6adf111f85e80a06866feff7c1fd78"
+                    "etag": "ba653cc058f3a0d4d0c4e9b9bccac4093550512687623d3183af7a2f4e883cd1"
                 },
                 {
-                    "name": "cfc6bcc9-7523-45f7-9a36-682fbc16b685",
+                    "name": "cba7b5dc-e2cb-492e-a1d3-1fbe4cd56306",
                     "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = $iocType\ntimestamp.get_date(ioc.ioc_ingest_time.seconds) = $date\n\nmatch:\n    $iocType, $date\noutcome:\n    $count = count(ioc.ioc_value)\norder:\n    $date desc",
                     "input": {
                         "relativeTime": {
@@ -691,7 +688,18 @@
                             "startTimeVal": "10"
                         }
                     },
-                    "etag": "9a939a67495bc162ebde81c46e8adb97ed1c935b55e723fa97a376fdd12c1171"
+                    "etag": "135e7bb4bfb65e59be39f5ff90a96a7e9b07d4c44c8b89215b218c7286c3f009"
+                },
+                {
+                    "name": "191b2b98-867b-468c-ae41-70942e201484",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = \"IOC_TYPE_IP\"\n\nioc.ioc_value = $ioc\nioc.confidence_score = $conf\n$user = strings.coalesce( ioc.asset.hostname, ioc.asset.asset_ip_address )\n\nmatch:\n    $ioc, $conf\n\noutcome:\n    $alerts = count($ioc)\n    $assets = count_distinct($user)\n\norder:\n    $conf desc,\n    $alerts desc\nlimit:\n    100",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "7"
+                        }
+                    },
+                    "etag": "ed9e15b69d6df42569e638ad06619eec980c68aadd3c6324543bc994882d9534"
                 }
             ]
         }
