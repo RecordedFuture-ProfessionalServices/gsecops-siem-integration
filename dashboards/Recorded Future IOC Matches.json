@@ -1,0 +1,707 @@
+{
+    "dashboards": [
+        {
+            "dashboard": {
+                "name": "44285f4d-4b06-474f-a1b7-5347603fce51",
+                "displayName": "Recorded Future IOC Matches",
+                "description": "Dashboard tracking indicators from Recorded Future Risk Lists",
+                "definition": {
+                    "filters": [
+                        {
+                            "id": "GlobalTimeFilter",
+                            "dataSource": "GLOBAL",
+                            "filterOperatorAndFieldValues": [
+                                {
+                                    "filterOperator": "PAST",
+                                    "fieldValues": [
+                                        "7",
+                                        "DAY"
+                                    ]
+                                }
+                            ],
+                            "displayName": "Global Time Filter",
+                            "chartIds": [
+                                "2c13dd98-1933-4806-b862-b29b1884368f",
+                                "dceaa663-1ba0-4bb5-8e96-587d22cf4c32",
+                                "873e1e99-3478-4230-80f6-38534fe583c8",
+                                "20cbb038-a04c-467d-8c17-a53ad68be284",
+                                "3597f863-a6bd-4328-a35c-437c702a4808",
+                                "2e03f8fa-11b5-40c4-8b5d-a326bb3a9aa5",
+                                "cc2f906d-d1dd-4648-97be-679de6ef6d4d"
+                            ],
+                            "isStandardTimeRangeFilter": true,
+                            "isStandardTimeRangeFilterEnabled": true
+                        }
+                    ],
+                    "charts": [
+                        {
+                            "dashboardChart": "2c13dd98-1933-4806-b862-b29b1884368f",
+                            "chartLayout": {
+                                "startX": 28,
+                                "spanX": 28,
+                                "startY": 3,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "3597f863-a6bd-4328-a35c-437c702a4808",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 96,
+                                "startY": 57,
+                                "spanY": 25
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "376d06be-b5d6-47e3-85ed-3c06bb7cc538",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 96,
+                                "startY": 0,
+                                "spanY": 3
+                            }
+                        },
+                        {
+                            "dashboardChart": "20cbb038-a04c-467d-8c17-a53ad68be284",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 28,
+                                "startY": 3,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "873e1e99-3478-4230-80f6-38534fe583c8",
+                            "chartLayout": {
+                                "startX": 56,
+                                "spanX": 40,
+                                "startY": 3,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "dceaa663-1ba0-4bb5-8e96-587d22cf4c32",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 96,
+                                "startY": 82,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "cc2f906d-d1dd-4648-97be-679de6ef6d4d",
+                            "chartLayout": {
+                                "startX": 0,
+                                "spanX": 48,
+                                "startY": 30,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        },
+                        {
+                            "dashboardChart": "2e03f8fa-11b5-40c4-8b5d-a326bb3a9aa5",
+                            "chartLayout": {
+                                "startX": 48,
+                                "spanX": 48,
+                                "startY": 30,
+                                "spanY": 27
+                            },
+                            "filtersIds": [
+                                "GlobalTimeFilter"
+                            ]
+                        }
+                    ]
+                },
+                "type": "CUSTOM",
+                "etag": "8ab618e33a65864b0c6035748bd2afe10569e815fe22f73a342860ed57145818",
+                "access": "DASHBOARD_PRIVATE"
+            },
+            "dashboardCharts": [
+                {
+                    "name": "2e03f8fa-11b5-40c4-8b5d-a326bb3a9aa5",
+                    "displayName": "Most Malicious Domain Matches by Count",
+                    "description": "Table of the most malicious Domain Matches against the number of matches for the global time filter",
+                    "chartDatasource": {
+                        "dashboardQuery": "cfe523bf-ddc4-4afd-962e-0c42d5706864",
+                        "dataSources": [
+                            "IOC_MATCHES"
+                        ]
+                    },
+                    "visualization": {
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "columnDefs": [
+                            {
+                                "field": "ioc",
+                                "header": "Domain"
+                            },
+                            {
+                                "field": "conf",
+                                "header": "Risk Score"
+                            },
+                            {
+                                "field": "matches",
+                                "header": "Total Matches"
+                            },
+                            {
+                                "field": "assets",
+                                "header": "Distinct Assets"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "bb950a882ad82b44875690f7cb2ed4cbd8108d57199421af2dbe47d2fcdb17ad",
+                    "drillDownConfig": {
+                        "leftDrillDowns": [
+                            {
+                                "id": "0EB90BD9-EB9A-497C-A1A8-003F0B9D1E30",
+                                "displayName": "Open in SIEM Search",
+                                "customSettings": {
+                                    "newTab": true,
+                                    "leftClickColumn": "ioc",
+                                    "query": {
+                                        "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.entity.hostname = ${ioc}"
+                                    }
+                                }
+                            }
+                        ],
+                        "rightDrillDowns": [
+                            {
+                                "id": "4A73BC59-77ED-481E-9D17-610C68C02C48",
+                                "displayName": "Open in Recorded Future Portal",
+                                "customSettings": {
+                                    "newTab": true,
+                                    "externalLink": {
+                                        "link": "https://app.recordedfuture.com/portal/intelligence-card/idn:${ioc}/overview"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "3597f863-a6bd-4328-a35c-437c702a4808",
+                    "displayName": "Recorded Future Rule Detections",
+                    "chartDatasource": {
+                        "dashboardQuery": "e7370ee0-dda5-4bac-aa54-c3f64f06e26b",
+                        "dataSources": [
+                            "RULE_DETECTIONS"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesName": "rf_ip_correlation",
+                                "seriesType": "LINE",
+                                "encode": {
+                                    "x": "Date",
+                                    "y": "Count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#1a73e8"
+                                },
+                                "seriesUniqueValue": "rf_ip_correlation"
+                            },
+                            {
+                                "seriesName": "rf_domain_correlation",
+                                "seriesType": "LINE",
+                                "encode": {
+                                    "x": "Date",
+                                    "y": "Count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#eb730a"
+                                },
+                                "seriesUniqueValue": "rf_domain_correlation"
+                            },
+                            {
+                                "seriesName": "rf_url_correlation",
+                                "seriesType": "LINE",
+                                "encode": {
+                                    "x": "Date",
+                                    "y": "Count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#10a3b7"
+                                },
+                                "seriesUniqueValue": "rf_url_correlation"
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "CATEGORY",
+                                "displayName": "Date"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE",
+                                "displayName": "Count"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "top": 12,
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "seriesColumn": [
+                            "Name"
+                        ],
+                        "groupingType": "Grouped"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "b416e91a15f7a4fb58afda90be769082e2c24039a43da6437d80d85c4050ad4d",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "20cbb038-a04c-467d-8c17-a53ad68be284",
+                    "displayName": "Recorded Future IOC Match Count",
+                    "chartDatasource": {
+                        "dashboardQuery": "2b88ce6c-1afe-4b71-ad4c-93e21af6fc2c",
+                        "dataSources": [
+                            "IOC_MATCHES"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesType": "TEXT",
+                                "label": "IOC Matches",
+                                "field": "count",
+                                "metricTrendConfig": {
+                                    "metricFormat": "METRIC_FORMAT_NUMBER",
+                                    "metricDisplayTrend": "METRIC_DISPLAY_TREND_ABSOLUTE_VALUE",
+                                    "metricTrendType": "METRIC_TREND_TYPE_REGULAR"
+                                }
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "446d6fe9a4d400303a5374ae7d2b7d8244f5008d286903b4e40d77917d5bc42f",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "376d06be-b5d6-47e3-85ed-3c06bb7cc538",
+                    "displayName": "markdown",
+                    "visualization": {
+                        "markdown": {
+                            "content": "### Recorded Future IOC Matches & Detections",
+                            "properties": {
+                                "backgroundColor": "#1B3663"
+                            }
+                        }
+                    },
+                    "tileType": "TILE_TYPE_MARKDOWN",
+                    "etag": "6ab3361f991044b5a6805c614503125227674a6a2eec9e2067bc0a5d63e18ce4"
+                },
+                {
+                    "name": "2c13dd98-1933-4806-b862-b29b1884368f",
+                    "displayName": "Recorded Future IOC Matches",
+                    "chartDatasource": {
+                        "dashboardQuery": "7475f816-a283-46f5-867a-fb44f0be02b5",
+                        "dataSources": [
+                            "IOC_MATCHES"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesType": "PIE",
+                                "encode": {
+                                    "value": "count",
+                                    "itemName": "iocType"
+                                },
+                                "dataLabel": {
+                                    "show": true
+                                },
+                                "radius": [
+                                    "40%",
+                                    "70%"
+                                ],
+                                "itemStyle": {
+                                    "color": "undefined"
+                                },
+                                "itemColors": {
+                                    "colors": [
+                                        {
+                                            "key": "IOC_TYPE_IP",
+                                            "value": {
+                                                "color": "#1a73e8",
+                                                "label": "IOC_TYPE_IP"
+                                            }
+                                        },
+                                        {
+                                            "key": "IOC_TYPE_DOMAIN",
+                                            "value": {
+                                                "color": "#eb730a",
+                                                "label": "IOC_TYPE_DOMAIN"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "top": 12,
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "c4d30166f971a21ce677d85670b65b9427d5f63fe08213a7a27d9645390b445b",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "873e1e99-3478-4230-80f6-38534fe583c8",
+                    "displayName": "Recorded Future IOC Matches by Risk Score",
+                    "chartDatasource": {
+                        "dashboardQuery": "779d7ff3-73f8-4f76-b30c-f6da44a8e6b5",
+                        "dataSources": [
+                            "IOC_MATCHES"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesName": "IOC_TYPE_IP",
+                                "stack": "stack",
+                                "seriesType": "BAR",
+                                "encode": {
+                                    "x": "conf",
+                                    "y": "count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#1a73e8"
+                                },
+                                "seriesUniqueValue": "IOC_TYPE_IP"
+                            },
+                            {
+                                "seriesName": "IOC_TYPE_DOMAIN",
+                                "stack": "stack",
+                                "seriesType": "BAR",
+                                "encode": {
+                                    "x": "conf",
+                                    "y": "count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#eb730a"
+                                },
+                                "seriesUniqueValue": "IOC_TYPE_DOMAIN"
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "CATEGORY",
+                                "displayName": "Risk Score"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE",
+                                "displayName": "Count"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "top": 12,
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "seriesColumn": [
+                            "iocType"
+                        ],
+                        "groupingType": "Stacked"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "dfa2eef391337d4d5582c1dfd0ad866c8eb51516fafa4bb17b1b94cab8d038d3",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "dceaa663-1ba0-4bb5-8e96-587d22cf4c32",
+                    "displayName": "Recorded Future IOC Matches by Type",
+                    "chartDatasource": {
+                        "dashboardQuery": "cba7b5dc-e2cb-492e-a1d3-1fbe4cd56306",
+                        "dataSources": [
+                            "IOC_MATCHES"
+                        ]
+                    },
+                    "visualization": {
+                        "series": [
+                            {
+                                "seriesName": "IOC_TYPE_DOMAIN",
+                                "seriesType": "LINE",
+                                "encode": {
+                                    "x": "date",
+                                    "y": "count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#1a73e8"
+                                },
+                                "seriesUniqueValue": "IOC_TYPE_DOMAIN"
+                            },
+                            {
+                                "seriesName": "IOC_TYPE_IP",
+                                "seriesType": "LINE",
+                                "encode": {
+                                    "x": "date",
+                                    "y": "count"
+                                },
+                                "dataLabel": {},
+                                "itemStyle": {
+                                    "color": "#eb730a"
+                                },
+                                "seriesUniqueValue": "IOC_TYPE_IP"
+                            }
+                        ],
+                        "xAxes": [
+                            {
+                                "axisType": "CATEGORY",
+                                "displayName": "Date"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "LOG",
+                                "displayName": "Count (log)"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "top": 12,
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "seriesColumn": [
+                            "iocType"
+                        ],
+                        "groupingType": "Grouped"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "f26b1d9ee02788ca0ae628151578746ff407d77c44c0e702b7246dbd2bd765b7",
+                    "drillDownConfig": {}
+                },
+                {
+                    "name": "cc2f906d-d1dd-4648-97be-679de6ef6d4d",
+                    "displayName": "Most Malicious IP Matches by Count",
+                    "description": "Table of the most malicious IP Matches against the number of matches for the global time filter",
+                    "chartDatasource": {
+                        "dashboardQuery": "191b2b98-867b-468c-ae41-70942e201484",
+                        "dataSources": [
+                            "IOC_MATCHES"
+                        ]
+                    },
+                    "visualization": {
+                        "xAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "yAxes": [
+                            {
+                                "axisType": "VALUE"
+                            }
+                        ],
+                        "legends": [
+                            {
+                                "legendOrient": "HORIZONTAL"
+                            }
+                        ],
+                        "columnDefs": [
+                            {
+                                "field": "ioc",
+                                "header": "IP"
+                            },
+                            {
+                                "field": "conf",
+                                "header": "Risk Score"
+                            },
+                            {
+                                "field": "alerts",
+                                "header": "Total Matches"
+                            },
+                            {
+                                "field": "assets",
+                                "header": "Distinct Assets"
+                            }
+                        ],
+                        "groupingType": "Off"
+                    },
+                    "tileType": "TILE_TYPE_VISUALIZATION",
+                    "etag": "eb89a5370f72349464014df4cae9b961d32250d6c025398fae37c8b4297a64f4",
+                    "drillDownConfig": {
+                        "leftDrillDowns": [
+                            {
+                                "id": "1E8739A6-B1EA-4D55-BFA4-A10E35B3137D",
+                                "displayName": "Open in SIEM Search",
+                                "customSettings": {
+                                    "newTab": true,
+                                    "leftClickColumn": "ioc",
+                                    "query": {
+                                        "query": "graph.metadata.vendor_name = \"RECORDED_FUTURE_IOC\"\ngraph.entity.ip = ${ioc}"
+                                    }
+                                }
+                            }
+                        ],
+                        "rightDrillDowns": [
+                            {
+                                "id": "DF75EA98-454C-49F7-8AA4-CDB85EF0BADE",
+                                "displayName": "Open in Recorded Future Portal",
+                                "customSettings": {
+                                    "newTab": true,
+                                    "externalLink": {
+                                        "link": "https://app.recordedfuture.com/portal/intelligence-card/ip:${ioc}/overview"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "dashboardQueries": [
+                {
+                    "name": "cfe523bf-ddc4-4afd-962e-0c42d5706864",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = \"IOC_TYPE_DOMAIN\"\n\nioc.ioc_value = $ioc\nioc.confidence_score = $conf\n$user = strings.coalesce( ioc.asset.hostname, ioc.asset.asset_ip_address )\n\nmatch:\n    $ioc, $conf\n\noutcome:\n    $matches = count($ioc)\n    $assets = count_distinct($user)\n\norder:\n    $conf desc,\n    $matches desc\nlimit:\n    100",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "5"
+                        }
+                    },
+                    "etag": "bf115d583ac7e3c4a708cf82cb63a18f5d0c6e14729969387dbf240b5f5179a6"
+                },
+                {
+                    "name": "e7370ee0-dda5-4bac-aa54-c3f64f06e26b",
+                    "query": "detection.detection.rule_name = /rf_*/ nocase\n\n$Name = detection.detection.rule_name\n$Date = timestamp.get_date(detection.created_time.seconds)\nmatch:\n    $Name, $Date\n\noutcome:\n    $Count = count(detection.id)\n\norder:\n    $Count desc",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "15"
+                        }
+                    },
+                    "etag": "288ed02c63d5ee867da523519117de0db0f5ca08725ee8f4012ac91b4858ec98"
+                },
+                {
+                    "name": "2b88ce6c-1afe-4b71-ad4c-93e21af6fc2c",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\n\noutcome:\n    $count = count(ioc.ioc_value)",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "WEEK",
+                            "startTimeVal": "1"
+                        }
+                    },
+                    "etag": "fe2ab389dcf32bf5e6c91775c4bc32053390b28edd05acc2edc31918a411a145"
+                },
+                {
+                    "name": "7475f816-a283-46f5-867a-fb44f0be02b5",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = $iocType\n\nmatch:\n    $iocType\noutcome:\n    $count = count(ioc.ioc_value)",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "WEEK",
+                            "startTimeVal": "1"
+                        }
+                    },
+                    "etag": "3376cac994cec695a7b84c155e1d5c7bdb40c02f852f0c5c9905563c2e44c5af"
+                },
+                {
+                    "name": "779d7ff3-73f8-4f76-b30c-f6da44a8e6b5",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = $iocType\nioc.confidence_score = $conf\nioc.ioc_value = $ioc\n$conf != \"\"\n\nmatch:\n    $iocType, $conf\noutcome:\n    $count = count($ioc)\norder:\n    $conf desc",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "6"
+                        }
+                    },
+                    "etag": "ba653cc058f3a0d4d0c4e9b9bccac4093550512687623d3183af7a2f4e883cd1"
+                },
+                {
+                    "name": "cba7b5dc-e2cb-492e-a1d3-1fbe4cd56306",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = $iocType\ntimestamp.get_date(ioc.ioc_ingest_time.seconds) = $date\n\nmatch:\n    $iocType, $date\noutcome:\n    $count = count(ioc.ioc_value)\norder:\n    $date desc",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "10"
+                        }
+                    },
+                    "etag": "135e7bb4bfb65e59be39f5ff90a96a7e9b07d4c44c8b89215b218c7286c3f009"
+                },
+                {
+                    "name": "191b2b98-867b-468c-ae41-70942e201484",
+                    "query": "ioc.feed_name = \"Recorded Future IOC\"\nioc.ioc_type = \"IOC_TYPE_IP\"\n\nioc.ioc_value = $ioc\nioc.confidence_score = $conf\n$user = strings.coalesce( ioc.asset.hostname, ioc.asset.asset_ip_address )\n\nmatch:\n    $ioc, $conf\n\noutcome:\n    $alerts = count($ioc)\n    $assets = count_distinct($user)\n\norder:\n    $conf desc,\n    $alerts desc\nlimit:\n    100",
+                    "input": {
+                        "relativeTime": {
+                            "timeUnit": "DAY",
+                            "startTimeVal": "7"
+                        }
+                    },
+                    "etag": "ed9e15b69d6df42569e638ad06619eec980c68aadd3c6324543bc994882d9534"
+                }
+            ]
+        }
+    ]
+}
