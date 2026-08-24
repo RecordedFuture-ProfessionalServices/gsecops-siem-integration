@@ -8,6 +8,8 @@ Instructions for how to deploy ingestion scripts to import Recorded Future Indic
 
 For more details on what Chronicle/Google SecOps ingestion scripts are, see [here](https://cloud.google.com/chronicle/docs/ingestion/ingest-using-cloud-functions).
 
+If serverless functions are not an option in your environment, the same ingestion script can be run as a Kubernetes CronJob instead. See [deploy/kubernetes](deploy/kubernetes/README.md), then return here for the parser, correlation rules and dashboards.
+
 Contact: [support@recordedfuture.com](mailto:support@recordedfuture.com)
 
 ### Updates over legacy version
@@ -40,7 +42,13 @@ Complete the following installation steps from inside the `src` directory
 
 ### Environment variables
 
-Set environment variables in `.env.yaml`. Below are the Recorded Future specific ones
+Copy the tracked example file and set your values in the copy. `.env.yml` is deliberately ignored by git, so the values you fill in for your own environment are never committed
+
+```
+cp .env.yml.example .env.yml
+```
+
+Below are the Recorded Future specific variables
 
 | Variable                   | Description                                                                                                                 | Required | Default | Secret |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- | ------- | ------ |

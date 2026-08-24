@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local Kustomize overlay holding your own customer ID, namespace and image
+# reference. Keeping it out of git means no tracked manifest ever carries a
+# real value, so there is nothing to remember to revert.
+deploy/kubernetes/overlays/local/
+
+# Real deployment configuration, created by copying src/.env.yml.example.
+# The example file is tracked; this copy holds your own secret paths and
+# customer ID and must never be committed.
+src/.env.yml
+
+# Credential material used when deploying. Never commit these.
+.env
+ingestion-auth.json
+*-credentials.json
+*.pem
+*.key
+
+# Local cluster access
+kubeconfig
+kubeconfig.yaml

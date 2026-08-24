@@ -1,0 +1,21 @@
+.git
+.github
+docs
+dashboards
+parsers
+correlation_rules
+deploy
+LICENSE
+README.md
+
+**/__pycache__
+**/*.pyc
+.pytest_cache
+
+# Environment values belong in a ConfigMap, not in the image.
+src/.env.yml
+src/.env.yml.example
+
+# Tests are not needed at runtime.
+src/test_main.py
+src/**/*_test.py

@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rf-risklist-ingest
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ingest
+              volumeMounts:
+                - name: rf-secrets
+                  mountPath: /var/run/secrets/recorded-future
+                  readOnly: true
+          volumes:
+            - name: rf-secrets
+              secret:
+                secretName: rf-risklist-ingest-secrets
+                # Readable by the container's group only. fsGroup in the base
+                # pod securityContext makes this readable by uid 1000.
+                defaultMode: 0440
+                items:
+                  - key: rf-api-token
+                    path: rf-api-token
+                  - key: chronicle-ingestion-auth.json
+                    path: chronicle-ingestion-auth.json
