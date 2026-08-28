@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Deploys to GKE and reads both secrets from Google Secret Manager using
+# Workload Identity, so no service account key is stored in the cluster.
+#
+# Replace PROJECT_ID and LOCATION in this file, in serviceaccount.yaml and in
+# configmap.yaml before applying.
+
+namespace: recorded-future
+
+resources:
+  - ../../base
+
+images:
+  - name: rf-risklist-ingest
+    newName: LOCATION-docker.pkg.dev/PROJECT_ID/recorded-future/rf-risklist-ingest
+    newTag: "1.0"
+
+patches:
+  - path: serviceaccount.yaml
+  - path: configmap.yaml

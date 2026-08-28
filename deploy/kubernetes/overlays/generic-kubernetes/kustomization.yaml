@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Deploys to any Kubernetes cluster, in or out of Google Cloud. Both secrets
+# come from a Kubernetes Secret mounted as files, so the job needs no Google
+# Cloud IAM identity and never calls Google Secret Manager.
+#
+# Create the Secret before applying - see deploy/kubernetes/README.md.
+#
+# Replace the image reference below with your own registry.
+
+namespace: recorded-future
+
+resources:
+  - ../../base
+
+images:
+  - name: rf-risklist-ingest
+    newName: registry.example.com/recorded-future/rf-risklist-ingest
+    newTag: "1.0"
+
+patches:
+  - path: cronjob.yaml
+  - path: configmap.yaml

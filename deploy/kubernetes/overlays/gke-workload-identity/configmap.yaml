@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rf-risklist-ingest-config
+data:
+  # Google Secret Manager resource paths, including the version. These are read
+  # through Application Default Credentials, which Workload Identity provides.
+  CHRONICLE_SERVICE_ACCOUNT: "projects/PROJECT_ID/secrets/chronicle-ingestion-auth/versions/latest"
+  RECORDED_FUTURE_SECRET: "projects/PROJECT_ID/secrets/recorded-future-api-token/versions/latest"
