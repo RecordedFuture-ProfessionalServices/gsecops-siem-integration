@@ -1,0 +1,75 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rf-risklist-ingest
+  labels:
+    app.kubernetes.io/name: rf-risklist-ingest
+    app.kubernetes.io/part-of: recorded-future
+spec:
+  # Run daily. Keep RECORDED_FUTURE_OFFSET in the ConfigMap equal to this
+  # frequency so IoCs age out at the same rate they are refreshed.
+  schedule: "0 2 * * *"
+  # Requires Kubernetes 1.27+. Remove this line on older clusters; the schedule
+  # then follows the timezone of the kube-controller-manager.
+  timeZone: "Etc/UTC"
+  # A run can take tens of minutes. Never start a second run on top of one that
+  # is still going.
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 3600
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      # One retry, then leave the failure visible until the next schedule.
+      backoffLimit: 1
+      # Matches the 3600s timeout used by the Cloud Run Function deployment.
+      activeDeadlineSeconds: 3600
+      ttlSecondsAfterFinished: 172800
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: rf-risklist-ingest
+        spec:
+          restartPolicy: Never
+          serviceAccountName: rf-risklist-ingest
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+            # Lets the container user read secret volumes mounted with mode 0440.
+            fsGroup: 1000
+            seccompProfile:
+              type: RuntimeDefault
+          containers:
+            - name: ingest
+              # Overridden by the `images` field in each overlay.
+              image: rf-risklist-ingest:1.0
+              imagePullPolicy: IfNotPresent
+              envFrom:
+                - configMapRef:
+                    name: rf-risklist-ingest-config
+              resources:
+                requests:
+                  cpu: "1"
+                  # The whole risklist is held in memory while it is converted
+                  # for ingestion. The Cloud Run Function equivalent uses 2GB;
+                  # 3Gi leaves headroom for growing default risklists.
+                  memory: 3Gi
+                  ephemeral-storage: 1Gi
+                limits:
+                  memory: 3Gi
+                  ephemeral-storage: 1Gi
+              securityContext:
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities:
+                  drop:
+                    - ALL
+              volumeMounts:
+                - name: tmp
+                  mountPath: /tmp
+          volumes:
+            # The only writable path in the container. HOME points here.
+            - name: tmp
+              emptyDir:
+                sizeLimit: 512Mi

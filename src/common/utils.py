@@ -39,7 +39,10 @@ def get_env_var(
     default (Optional[Any]): Default value to return in case the env variable is
       not set. Defaults to None.
     is_secret (bool): Script will get data from Google Cloud Secret Manager in
-      case it is set to true.
+      case it is set to true. If the "<name>_FILE" environment variable is set,
+      the secret is read from that file instead. This allows deployments that
+      cannot reach Google Cloud Secret Manager, such as a Kubernetes cluster
+      outside of Google Cloud, to supply secrets as mounted files.
 
   Returns:
     Any: Value of the environment variable.
@@ -47,8 +50,13 @@ def get_env_var(
   Raises:
     RuntimeError: Raises when required name is not in environment variable.
   """
+  if is_secret:
+    secret_file = os.environ.get(f"{name}_FILE", "").strip()
+    if secret_file:
+      return get_value_from_file(secret_file)
   if name not in os.environ and required:
-    raise RuntimeError(f"Environment variable {name} is required.")
+    hint = f" Set {name} or {name}_FILE." if is_secret else ""
+    raise RuntimeError(f"Environment variable {name} is required.{hint}")
   if is_secret:
     return get_value_from_secret_manager(os.environ[name])
   if name not in os.environ or (name in os.environ and
@@ -103,6 +111,27 @@ def get_value_from_secret_manager(resource_path: str) -> str:
   # Access the secret version.
   response = client.access_secret_version(name=resource_path)
   return response.payload.data.decode("UTF-8")
+
+
+def get_value_from_file(path: str) -> str:
+  """Retrieve the value of the secret from a file on disk.
+
+  Args:
+    path (str): Path of the file holding the secret. Ex.: a Kubernetes Secret
+      mounted at "/var/run/secrets/recorded-future/rf-api-token".
+
+  Returns:
+    str: Payload for secret. Surrounding whitespace is stripped, so a trailing
+      newline in the file does not become part of the secret.
+
+  Raises:
+    RuntimeError: If the file cannot be read.
+  """
+  try:
+    with open(path, encoding="utf-8") as secret_file:
+      return secret_file.read().strip()
+  except OSError as error:
+    raise RuntimeError(f"Could not read the secret file {path}.") from error
 
 
 def load_service_account(service_account: str,

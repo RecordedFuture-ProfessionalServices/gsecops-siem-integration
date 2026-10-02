@@ -4,11 +4,18 @@
 
 ## Overview
 
-Instructions for how to deploy ingestion scripts to import Recorded Future Indicators of Compromise into Google SecOps SIEM. These scripts as deployed as Google Cloud Run Functions. Recorded Future is the world's largest provider of intelligence for enterprise security. By seamlessly combining automated data collection, pervasive analytics, and expert human analysis, Recorded Future delivers timely, accurate, and actionable intelligence.
+Instructions for how to deploy ingestion scripts to import Recorded Future Indicators of Compromise into Google SecOps SIEM. Recorded Future is the world's largest provider of intelligence for enterprise security. By seamlessly combining automated data collection, pervasive analytics, and expert human analysis, Recorded Future delivers timely, accurate, and actionable intelligence.
 
 For more details on what Chronicle/Google SecOps ingestion scripts are, see [here](https://cloud.google.com/chronicle/docs/ingestion/ingest-using-cloud-functions).
 
 Contact: [support@recordedfuture.com](mailto:support@recordedfuture.com)
+
+### Deployment options
+
+The ingestion script can be deployed in either of two ways. The parser, correlation rules and dashboards are the same for both.
+
+1. **Cloud Run Function & Cloud Scheduler** - a serverless function triggered daily by Cloud Scheduler. See [Option 1](#option-1-cloud-run-function--cloud-scheduler)
+2. **Kubernetes** - a Kubernetes CronJob, on GKE or any other cluster. See [Option 2](#option-2-kubernetes)
 
 ### Updates over legacy version
 
@@ -26,21 +33,38 @@ These ingestion scripts contain significant updates over the [legacy integration
 
 Before Installing the ingestion script, you must take the following steps
 
-- Acquire a Recorded Future API Token and place it in GCP secrets manager. Note the path of the secret and use it for the `RECORDED_FUTURE_SECRET` value in .env.yml
-- Acquire Google SecOps credentials from the SecOps console at SIEM Settings->Collection Agents->Ingestion Authentication File. Place it in GCP secrets manager and use it for the `CHRONICLE_SERVICE_ACCOUNT` value in .env.yml
+- Acquire a Recorded Future API Token
+- Acquire Google SecOps credentials from the SecOps console at SIEM Settings->Collection Agents->Ingestion Authentication File
+
+For the Cloud Run Function option, also:
+
+- Place the Recorded Future API Token in GCP secrets manager. Note the path of the secret and use it for the `RECORDED_FUTURE_SECRET` value in .env.yml
+- Place the Google SecOps credentials in GCP secrets manager and use it for the `CHRONICLE_SERVICE_ACCOUNT` value in .env.yml
 - Create (or use an existing service account) and use it's email in the `<SERVICE_ACCOUNT_EMAIL>` placeholders specified below. Assign the Service Account the following permissions. You **cannot** use the Chronicle credentials service account for this
     - `Cloud Functions Invoker`
     - `Cloud Run Invoker`
     - `Service Account User`
     - `Secret Manager Secret Accessor`. Although this permission can be granted project-wide, best practice is to grant only for the two secrets created above
 
+The Kubernetes option lists its own prerequisites in [deploy/kubernetes](deploy/kubernetes/README.md#prerequisites).
+
 ## Installation
+
+### Install & Schedule Ingestion Script
+
+#### Option 1: Cloud Run Function & Cloud Scheduler
 
 Complete the following installation steps from inside the `src` directory
 
-### Environment variables
+##### Environment variables
 
-Set environment variables in `.env.yaml`. Below are the Recorded Future specific ones
+Copy the tracked example file and set your values in the copy. `.env.yml` is deliberately ignored by git, so the values you fill in for your own environment are never committed
+
+```
+cp .env.yml.example .env.yml
+```
+
+Below are the Recorded Future specific variables
 
 | Variable                   | Description                                                                                                                 | Required | Default | Secret |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- | ------- | ------ |
@@ -49,14 +73,12 @@ Set environment variables in `.env.yaml`. Below are the Recorded Future specific
 | RECORDED_FUTURE_FUSION_PATH_IP              | Fusion Path to IP Risk List to be ingested. "default" uses default IP risk list                                                           | Yes      | default       | No     |
 | RECORDED_FUTURE_FUSION_PATH_URL              | Fusion Path to URL Risk List to be ingested. "default" uses default URL risk list                                                           | Yes      | default       | No     |
 | RECORDED_FUTURE_FUSION_PATH_HASH              | Fusion Path to Hash Risk List to be ingested. "default" uses default Hash risk list                                                           | Yes      | default       | No     |
-| RECORDED_FUTURE_OFFSET              | Sets the expiration time for Recorded Future IoCs. Should be an int followed by `d` (days) or `h` (hours). Should be set equal to the update run frequency of the Cloud Run Function                                                         | Yes      | 1d       | No     |
+| RECORDED_FUTURE_OFFSET              | Sets the expiration time for Recorded Future IoCs. Should be an int followed by `d` (days) or `h` (hours). Should be set equal to the update run frequency of the ingestion script                                                         | Yes      | 1d       | No     |
 
-
-### Install & Schedule Ingestion Script
 
 We recommend installing the ingestion scripts using the gcloud CLI. However, it is possible to install it through the GCP console if you prefer
 
-#### Cloud Run Function
+##### Cloud Run Function
 
 When deploying the Function, use the Service Account described in the `Prerequisites` section. If you decide to create the Cloud Run Function manually in the console, make sure you give it at least 2gb of memory and a timeout of at least 30 minutes
 
@@ -64,12 +86,12 @@ When deploying the Function, use the Service Account described in the `Prerequis
 Deploy the ingestion script following using the following gcloud CLI command while inside the `src` directory
 
 ```
- gcloud functions deploy rf_ingest --entry-point main --trigger-http --runtime python311 --env-vars-file .env.yml -service-account <SERVICE_ACCOUNT_EMAIL> --memory 2048MB --timeout=3600s --no-allow-unauthenticated --ingress-settings internal-only
+ gcloud functions deploy rf_ingest --entry-point main --trigger-http --runtime python311 --env-vars-file .env.yml --service-account <SERVICE_ACCOUNT_EMAIL> --memory 2048MB --timeout=3600s --no-allow-unauthenticated --ingress-settings internal-only
 
 ```
 This command will return a URI, which you can use in the next step
 
-#### Cloud Scheduler
+##### Cloud Scheduler
 
  After deploying the script, make sure you schedule it to run regularly by creating a Cloud Scheduler Job. The script should be scheduled to run at least daily.  We recommend setting the timeout/deadline value to 30 minutes. The Cloud Scheduler **must** be deployed in the same project and region as the Cloud Run Function
  
@@ -78,6 +100,12 @@ This command will return a URI, which you can use in the next step
 ```
 gcloud scheduler jobs create http rf-secops-ingest --schedule="0 0 * * *" --uri="<PATH_OF_RUN_FUNCTION_URL>" --oidc-service-account-email=<SERVICE_ACCOUNT_EMAIL> --http-method=POST --attempt-deadline 30m --location <GCP LOCATION. E.G. "us-central1">
 ```
+
+#### Option 2: Kubernetes
+
+The ingestion script runs as a Kubernetes CronJob, on GKE with Workload Identity or on any other cluster. Follow [deploy/kubernetes](deploy/kubernetes/README.md) to build the image and deploy it. Its settings carry the same meaning as the [environment variables](#environment-variables) above
+
+The remaining steps apply to both deployment options.
 
 ### Install New Parser
 

@@ -77,6 +77,36 @@ class TestUtilsFromCommon(unittest.TestCase):
     self.assertEqual(
         utils.get_env_var("POLL_INTERVAL", is_secret=True), "10")
 
+  @mock.patch(
+      "{}.utils.get_value_from_secret_manager".format(INGESTION_SCRIPTS_PATH))
+  @mock.patch.dict("{}.utils.os.environ".format(INGESTION_SCRIPTS_PATH),
+                   {"POLL_INTERVAL_FILE": "/var/run/secrets/poll_interval"})
+  def test_get_env_var_secret_value_from_file(
+      self, mocked_get_value_from_secret_manager):
+    """Test case to verify that the secret is read from the file referenced by <name>_FILE.
+
+    Args:
+      mocked_get_value_from_secret_manager (mock.Mock): Mocked
+      get_value_from_secret_manager() function.
+
+    Asserts:
+      get_env_var() returns the stripped file contents and does not call the
+      Google Secret Manager.
+    """
+    with mock.patch("builtins.open", mock.mock_open(read_data="10\n")):
+      self.assertEqual(utils.get_env_var("POLL_INTERVAL", is_secret=True), "10")
+    mocked_get_value_from_secret_manager.assert_not_called()
+
+  def test_get_env_var_secret_runtime_error(self):
+    """Test case to verify that the RuntimeError for a missing secret mentions both accepted variables.
+
+    Asserts:
+      get_env_var() raises RuntimeError naming <name> and <name>_FILE when
+      neither is set.
+    """
+    with self.assertRaisesRegex(RuntimeError, "Set test or test_FILE."):
+      utils.get_env_var("test", required=True, is_secret=True)
+
   @mock.patch.dict("{}.utils.os.environ".format(INGESTION_SCRIPTS_PATH),
                    {"POLL_INTERVAL": "-10"})
   def test_get_last_run_at_invalid(self):
