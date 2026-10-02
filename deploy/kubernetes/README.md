@@ -2,7 +2,7 @@
 
 # Kubernetes Deployment
 
-Alternative to the Cloud Run Function deployment described in the [main README](../../README.md), for environments where serverless functions are not an option. The ingestion script runs as a Kubernetes `CronJob` instead of an HTTP function triggered by Cloud Scheduler. Everything else about the integration - the parser, the correlation rules and the dashboards - is unchanged, so follow the main README for those steps.
+Alternative to the Cloud Run Function deployment described in the [main README](../../README.md#deployment-options). The ingestion script runs as a Kubernetes `CronJob` instead of an HTTP function triggered by Cloud Scheduler. Everything else about the integration - the parser, the correlation rules and the dashboards - is unchanged, so follow the main README for those steps.
 
 The script itself is not modified. `main.py` already runs to completion and exits when invoked directly, so no HTTP server or functions framework is involved.
 
