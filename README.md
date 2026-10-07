@@ -68,6 +68,8 @@ Below are the Recorded Future specific variables
 
 | Variable                   | Description                                                                                                                 | Required | Default | Secret |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- | ------- | ------ |
+| CHRONICLE_API_URL              | Chronicle API base URL of your Google SecOps instance, copied from the client's SecOps instance (SIEM Settings -> Profile), e.g. `https://us-chronicle.googleapis.com/projects/<project>/locations/<location>/instances/<instance-id>`. No trailing slash.| Yes       |   -      | No     |
+| CHRONICLE_SERVICE_ACCOUNT              | GCP Secret Manager path (including version) of the secret containing the Google SecOps service account credentials.| Yes       |   -      | Yes     |
 | RECORDED_FUTURE_SECRET              | GCP path to the secret containing the Recorded Future API token.| Yes       |   -      | Yes     |
 | RECORDED_FUTURE_FUSION_PATH_DOMAIN              | Fusion Path to Domain Risk List to be ingested. "default" uses default domain risk list                                                           | Yes      | default       | No     |
 | RECORDED_FUTURE_FUSION_PATH_IP              | Fusion Path to IP Risk List to be ingested. "default" uses default IP risk list                                                           | Yes      | default       | No     |

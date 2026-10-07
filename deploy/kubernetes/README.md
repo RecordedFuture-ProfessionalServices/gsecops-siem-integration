@@ -27,7 +27,7 @@ The same credentials the Cloud Run Function deployment needs:
 
 - A Recorded Future API token
 - A Google SecOps ingestion authentication file, from the SecOps console at SIEM Settings -> Collection Agents -> Ingestion Authentication File
-- Your SecOps customer ID, from SIEM Settings -> Profile
+- Your SecOps Chronicle API URL, from the client's SecOps instance (SIEM Settings -> Profile)
 
 Plus a container registry the cluster can pull from, and a cluster running Kubernetes 1.27 or later (for the `timeZone` field on `CronJob`; see the comment in [base/cronjob.yaml](base/cronjob.yaml) to drop it on older clusters).
 
@@ -45,7 +45,7 @@ The image is built from `src/`, including the bundled `psengine` wheel, so the b
 
 ## Configure
 
-[base/configmap.yaml](base/configmap.yaml) lists every setting with its default. `CHRONICLE_CUSTOMER_ID` is required; review `CHRONICLE_REGION`, the four `RECORDED_FUTURE_FUSION_PATH_*` values and `RECORDED_FUTURE_OFFSET`. They carry the same meaning as in `src/.env.yml.example`, documented in the [main README](../../README.md#environment-variables).
+[base/configmap.yaml](base/configmap.yaml) lists every setting with its default. `CHRONICLE_API_URL` is required; review the four `RECORDED_FUTURE_FUSION_PATH_*` values and `RECORDED_FUTURE_OFFSET`. They carry the same meaning as in `src/.env.yml.example`, documented in the [main README](../../README.md#environment-variables).
 
 Set your own values in an overlay rather than editing the tracked files - see [Keeping your own values out of this repository](#keeping-your-own-values-out-of-this-repository).
 
@@ -148,7 +148,7 @@ kind: ConfigMap
 metadata:
   name: rf-risklist-ingest-config
 data:
-  CHRONICLE_CUSTOMER_ID: "<your customer ID>"
+  CHRONICLE_API_URL: "<your Chronicle API URL>"
 ```
 
 Then deploy with `kubectl apply -k deploy/kubernetes/overlays/local`.
@@ -171,7 +171,7 @@ patches:
   - path: configmap.yaml
 ```
 
-Alongside it, a `serviceaccount.yaml` setting `iam.gke.io/gcp-service-account` to your Google service account, and a `configmap.yaml` setting `CHRONICLE_CUSTOMER_ID` plus the `RECORDED_FUTURE_SECRET` and `CHRONICLE_SERVICE_ACCOUNT` Secret Manager paths for your project.
+Alongside it, a `serviceaccount.yaml` setting `iam.gke.io/gcp-service-account` to your Google service account, and a `configmap.yaml` setting `CHRONICLE_API_URL` plus the `RECORDED_FUTURE_SECRET` and `CHRONICLE_SERVICE_ACCOUNT` Secret Manager paths for your project.
 
 For anything beyond a test, prefer the same idea one level up: keep that overlay in your own private repository and consume this one as a remote base, so your values live under your own change control.
 
