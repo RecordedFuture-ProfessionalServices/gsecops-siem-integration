@@ -34,13 +34,30 @@ These ingestion scripts contain significant updates over the [legacy integration
 Before Installing the ingestion script, you must take the following steps
 
 - Acquire a Recorded Future API Token
-- Acquire Google SecOps credentials from the SecOps console at SIEM Settings->Collection Agents->Ingestion Authentication File
+- Create a dedicated service account for the Chronicle API in the Google Cloud project bound to your Google SecOps instance, and grant it the `Chronicle API Editor` (`roles/chronicle.editor`) role
+- Create a JSON key for that service account and download it
+
+    ```
+    gcloud iam service-accounts create rf-chronicle-ingest --display-name="Recorded Future Chronicle API"
+    gcloud projects add-iam-policy-binding <SECOPS_PROJECT_ID> \
+      --member="serviceAccount:rf-chronicle-ingest@<SECOPS_PROJECT_ID>.iam.gserviceaccount.com" \
+      --role="roles/chronicle.editor"
+    gcloud iam service-accounts keys create chronicle-service-account.json \
+      --iam-account=rf-chronicle-ingest@<SECOPS_PROJECT_ID>.iam.gserviceaccount.com
+    ```
+
+> **Note:** An existing legacy Ingestion Authentication File (SIEM Settings -> Collection Agents) may continue to work, but Google does not support it for the Chronicle API. Use a dedicated service account key instead.
 
 For the Cloud Run Function option, also:
 
 - Place the Recorded Future API Token in GCP secrets manager. Note the path of the secret and use it for the `RECORDED_FUTURE_SECRET` value in .env.yml
-- Place the Google SecOps credentials in GCP secrets manager and use it for the `CHRONICLE_SERVICE_ACCOUNT` value in .env.yml
-- Create (or use an existing service account) and use it's email in the `<SERVICE_ACCOUNT_EMAIL>` placeholders specified below. Assign the Service Account the following permissions. You **cannot** use the Chronicle credentials service account for this
+- Place the Chronicle API service account key in GCP secrets manager and use its path for the `CHRONICLE_SERVICE_ACCOUNT` value in .env.yml
+
+    ```
+    gcloud secrets create chronicle-service-account-key --data-file=chronicle-service-account.json
+    ```
+
+- Create (or use an existing service account) and use it's email in the `<SERVICE_ACCOUNT_EMAIL>` placeholders specified below. Assign the Service Account the following permissions. Use a different service account from the Chronicle API one above, so the function's runtime identity stays separate from the key
     - `Cloud Functions Invoker`
     - `Cloud Run Invoker`
     - `Service Account User`
@@ -68,6 +85,8 @@ Below are the Recorded Future specific variables
 
 | Variable                   | Description                                                                                                                 | Required | Default | Secret |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------- | ------- | ------ |
+| CHRONICLE_API_URL              | Chronicle API base URL of your Google SecOps instance, copied from the client's SecOps instance (SIEM Settings -> Profile), e.g. `https://us-chronicle.googleapis.com/projects/<project>/locations/<location>/instances/<instance-id>`. No trailing slash.| Yes       |   -      | No     |
+| CHRONICLE_SERVICE_ACCOUNT              | GCP Secret Manager path (including version) of the secret holding the Chronicle API service account JSON key. Optional: leave it unset to call the Chronicle API as the runtime's own identity instead (the function's service account on Cloud Run, or Workload Identity on GKE), after granting that identity `Chronicle API Editor`.| No       |   -      | Yes     |
 | RECORDED_FUTURE_SECRET              | GCP path to the secret containing the Recorded Future API token.| Yes       |   -      | Yes     |
 | RECORDED_FUTURE_FUSION_PATH_DOMAIN              | Fusion Path to Domain Risk List to be ingested. "default" uses default domain risk list                                                           | Yes      | default       | No     |
 | RECORDED_FUTURE_FUSION_PATH_IP              | Fusion Path to IP Risk List to be ingested. "default" uses default IP risk list                                                           | Yes      | default       | No     |

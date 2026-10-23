@@ -6,11 +6,8 @@ data:
   # ---------------------------------------------------------------------------
   # Google SecOps
   # ---------------------------------------------------------------------------
-  # Required. SecOps customer ID, from SIEM Settings -> Profile.
-  CHRONICLE_CUSTOMER_ID: ""
-
-  # Region where the SecOps instance is located.
-  CHRONICLE_REGION: "us"
+  # Required. Chronicle API URL, from SIEM Settings -> Profile.
+  CHRONICLE_API_URL: ""
 
   # The namespace that the SecOps logs are labeled with.
   CHRONICLE_NAMESPACE: "RAW_TELEMETRY"

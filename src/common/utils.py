@@ -54,11 +54,15 @@ def get_env_var(
     secret_file = os.environ.get(f"{name}_FILE", "").strip()
     if secret_file:
       return get_value_from_file(secret_file)
+    secret_path = os.environ.get(name, "").strip()
+    if secret_path:
+      return get_value_from_secret_manager(secret_path)
+    if required:
+      raise RuntimeError(
+          f"Environment variable {name} is required. Set {name} or {name}_FILE.")
+    return default
   if name not in os.environ and required:
-    hint = f" Set {name} or {name}_FILE." if is_secret else ""
-    raise RuntimeError(f"Environment variable {name} is required.{hint}")
-  if is_secret:
-    return get_value_from_secret_manager(os.environ[name])
+    raise RuntimeError(f"Environment variable {name} is required.")
   if name not in os.environ or (name in os.environ and
                                 not os.environ[name].strip()):
     return default
