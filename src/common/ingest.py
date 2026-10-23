@@ -21,6 +21,7 @@ import sys
 from datetime import datetime, timezone
 from typing import Any, Dict, Optional, Sequence
 
+import google.auth
 from google.auth.transport import requests as Requests
 from google.oauth2 import service_account
 
@@ -28,9 +29,11 @@ from common import env_constants
 from common import utils
 
 AUTHORIZATION_SCOPES = ["https://www.googleapis.com/auth/chronicle"]
-CHRONICLE_API_URL = utils.get_env_var(env_constants.ENV_CHRONICLE_API_URL)
+CHRONICLE_API_URL = utils.get_env_var(env_constants.ENV_CHRONICLE_API_URL).strip().rstrip("/")
+# Optional service account key. When unset, the runtime's own identity is used
+# through Application Default Credentials.
 SERVICE_ACCOUNT = utils.get_env_var(
-    env_constants.ENV_CHRONICLE_SERVICE_ACCOUNT, is_secret=True
+    env_constants.ENV_CHRONICLE_SERVICE_ACCOUNT, required=False, is_secret=True
 )
 CHRONICLE_API_BASE = "googleapis.com"
 API_VERSION = "v1"
@@ -46,7 +49,10 @@ SIZE_THRESHOLD_BYTES = 950000
 # ingest it into Chronicle if it exceeds more than 0.95MB.
 LOG_BATCH_SIZE = 100
 
-SERVICE_ACCOUNT_DICT = utils.load_service_account(SERVICE_ACCOUNT, "Chronicle")
+SERVICE_ACCOUNT_DICT = (
+    utils.load_service_account(SERVICE_ACCOUNT, "Chronicle")
+    if SERVICE_ACCOUNT else None
+)
 
 def _insert_api_version(url: str = CHRONICLE_API_URL):
   split = url.split(CHRONICLE_API_BASE)
@@ -54,23 +60,31 @@ def _insert_api_version(url: str = CHRONICLE_API_URL):
   return result
 
 def initialize_http_session(
-    service_account_json: Dict[Any, Any],
+    service_account_json: Optional[Dict[Any, Any]] = None,
     scopes: Optional[Sequence[str]] = None,
 ) -> Requests.AuthorizedSession:
   """Initializes an authenticated session with Google Chronicle.
 
   Args:
-    service_account_json (dict): Service Account JSON.
+    service_account_json (Optional[dict]): Service Account JSON key. When None,
+      Application Default Credentials are used instead: the function's service
+      account on Cloud Run, Workload Identity on GKE, or a Workload Identity
+      Federation credential configuration named by
+      GOOGLE_APPLICATION_CREDENTIALS elsewhere.
     scopes (Optional[Sequence[str]], optional): Required scopes. Defaults to
       None.
 
   Returns:
     Requests.AuthorizedSession: Authorized session object.
   """
-  credentials = service_account.Credentials.from_service_account_info(
-      service_account_json,
-      scopes=scopes or AUTHORIZATION_SCOPES,
-  )
+  scopes = scopes or AUTHORIZATION_SCOPES
+  if service_account_json:
+    credentials = service_account.Credentials.from_service_account_info(
+        service_account_json,
+        scopes=scopes,
+    )
+  else:
+    credentials, _ = google.auth.default(scopes=scopes)
   return Requests.AuthorizedSession(credentials)
 
 

@@ -284,3 +284,42 @@ class TestIngestMethod(unittest.TestCase):
     assert mocked_http_session.request.call_count == 1
     assert mocked_response.json.call_count == 1
     assert mocked_response.raise_for_status.call_count == 1
+
+  @mock.patch(f"{INGESTION_SCRIPTS_PATH}.ingest.google.auth.default")
+  @mock.patch(f"{INGESTION_SCRIPTS_PATH}.ingest.service_account")
+  def test_initialize_http_session_with_service_account_key(
+      self, mocked_service_account, mocked_default):
+    """Test case to verify that a service account key is used when one is provided.
+
+    Args:
+      mocked_service_account (mock.Mock): Mocked google.oauth2.service_account.
+      mocked_default (mock.Mock): Mocked google.auth.default().
+
+    Asserts:
+      Credentials are built from the key and Application Default Credentials
+      are not consulted.
+    """
+    key = {"type": "service_account"}
+    ingest.initialize_http_session(key)
+    mocked_service_account.Credentials.from_service_account_info.assert_called_once_with(
+        key, scopes=ingest.AUTHORIZATION_SCOPES)
+    mocked_default.assert_not_called()
+
+  @mock.patch(f"{INGESTION_SCRIPTS_PATH}.ingest.google.auth.default")
+  @mock.patch(f"{INGESTION_SCRIPTS_PATH}.ingest.service_account")
+  def test_initialize_http_session_with_default_credentials(
+      self, mocked_service_account, mocked_default):
+    """Test case to verify that Application Default Credentials are used without a key.
+
+    Args:
+      mocked_service_account (mock.Mock): Mocked google.oauth2.service_account.
+      mocked_default (mock.Mock): Mocked google.auth.default().
+
+    Asserts:
+      google.auth.default() is called with the Chronicle scope and no key is
+      loaded.
+    """
+    mocked_default.return_value = (mock.MagicMock(), "project")
+    ingest.initialize_http_session(None)
+    mocked_default.assert_called_once_with(scopes=ingest.AUTHORIZATION_SCOPES)
+    mocked_service_account.Credentials.from_service_account_info.assert_not_called()
