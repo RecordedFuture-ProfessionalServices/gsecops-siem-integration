@@ -94,6 +94,7 @@ Below are the Recorded Future specific variables
 | RECORDED_FUTURE_FUSION_PATH_HASH              | Fusion Path to Hash Risk List to be ingested. "default" uses default Hash risk list                                                           | Yes      | default       | No     |
 | RECORDED_FUTURE_OFFSET              | Sets the expiration time for Recorded Future IoCs. Should be an int followed by `d` (days) or `h` (hours). Should be set equal to the update run frequency of the ingestion script                                                         | Yes      | 1d       | No     |
 
+> **_Note:_** Regional endpoints: SIEM Settings shows a locational URL (https://-chronicle.googleapis.com/...). For data residency requirements, you can use the regional endpoint instead by changing only the hostname to chronicle..rep.googleapis.com. The path stays the same. Both work.
 
 We recommend installing the ingestion scripts using the gcloud CLI. However, it is possible to install it through the GCP console if you prefer
 
