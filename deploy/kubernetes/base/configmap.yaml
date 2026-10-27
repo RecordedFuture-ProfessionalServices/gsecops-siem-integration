@@ -12,9 +12,6 @@ data:
   # The namespace that the SecOps logs are labeled with.
   CHRONICLE_NAMESPACE: "RAW_TELEMETRY"
 
-  # Log type used to push data into SecOps.
-  CHRONICLE_DATA_TYPE: "RECORDED_FUTURE_IOC"
-
   # ---------------------------------------------------------------------------
   # Recorded Future
   # ---------------------------------------------------------------------------
