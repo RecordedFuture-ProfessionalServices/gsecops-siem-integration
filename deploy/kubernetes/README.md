@@ -26,8 +26,8 @@ Both deploy the same workload into the `recorded-future` namespace:
 The same credentials the Cloud Run Function deployment needs:
 
 - A Recorded Future API token
-- A Google SecOps ingestion authentication file, from the SecOps console at SIEM Settings -> Collection Agents -> Ingestion Authentication File
-- Your SecOps customer ID, from SIEM Settings -> Profile
+- A JSON key for a dedicated Chronicle API service account holding `Chronicle API Editor` (`roles/chronicle.editor`) on the project bound to your SecOps instance. See the [main README prerequisites](../../README.md#prerequisites) for how to create it. An existing legacy Ingestion Authentication File may continue to work, but Google does not support it for the Chronicle API
+- Your SecOps Chronicle API URL, from the client's SecOps instance (SIEM Settings -> Profile)
 
 Plus a container registry the cluster can pull from, and a cluster running Kubernetes 1.27 or later (for the `timeZone` field on `CronJob`; see the comment in [base/cronjob.yaml](base/cronjob.yaml) to drop it on older clusters).
 
@@ -45,7 +45,7 @@ The image is built from `src/`, including the bundled `psengine` wheel, so the b
 
 ## Configure
 
-[base/configmap.yaml](base/configmap.yaml) lists every setting with its default. `CHRONICLE_CUSTOMER_ID` is required; review `CHRONICLE_REGION`, the four `RECORDED_FUTURE_FUSION_PATH_*` values and `RECORDED_FUTURE_OFFSET`. They carry the same meaning as in `src/.env.yml.example`, documented in the [main README](../../README.md#environment-variables).
+[base/configmap.yaml](base/configmap.yaml) lists every setting with its default. `CHRONICLE_API_URL` is required; review the four `RECORDED_FUTURE_FUSION_PATH_*` values and `RECORDED_FUTURE_OFFSET`. They carry the same meaning as in `src/.env.yml.example`, documented in the [main README](../../README.md#environment-variables).
 
 Set your own values in an overlay rather than editing the tracked files - see [Keeping your own values out of this repository](#keeping-your-own-values-out-of-this-repository).
 
@@ -75,8 +75,8 @@ docker push $IMAGE
 # Secrets, both from files to avoid shell quoting
 gcloud secrets create recorded-future-api-token \
   --data-file=<path/to/rf-token.txt>
-gcloud secrets create chronicle-ingestion-auth \
-  --data-file=<path/to/ingestion-auth.json>
+gcloud secrets create chronicle-service-account-key \
+  --data-file=<path/to/chronicle-service-account.json>
 
 # Cluster
 gcloud container clusters create-auto $CLUSTER --location=$LOCATION
@@ -85,7 +85,7 @@ gcloud container clusters get-credentials $CLUSTER --location=$LOCATION
 # Google service account, granted access to just those two secrets
 gcloud iam service-accounts create rf-ingest \
   --display-name="Recorded Future risklist ingestion"
-for SECRET in recorded-future-api-token chronicle-ingestion-auth; do
+for SECRET in recorded-future-api-token chronicle-service-account-key; do
   gcloud secrets add-iam-policy-binding $SECRET \
     --member="serviceAccount:rf-ingest@$PROJECT_ID.iam.gserviceaccount.com" \
     --role="roles/secretmanager.secretAccessor"
@@ -97,6 +97,8 @@ gcloud iam service-accounts add-iam-policy-binding \
   --role="roles/iam.workloadIdentityUser" \
   --member="serviceAccount:$PROJECT_ID.svc.id.goog[recorded-future/rf-risklist-ingest]"
 ```
+
+To run without a service account key, skip the `chronicle-service-account-key` secret, remove `CHRONICLE_SERVICE_ACCOUNT` from your overlay's `configmap.yaml`, and grant `rf-ingest` the `Chronicle API Editor` role on the project bound to your SecOps instance instead. The job then calls the Chronicle API as the Workload Identity service account.
 
 Then add an overlay carrying your project's values, as described in [Keeping your own values out of this repository](#keeping-your-own-values-out-of-this-repository), and apply it:
 
@@ -115,7 +117,7 @@ kubectl apply -k deploy/kubernetes/overlays/local
 Then create the Secret. The key names must match those in [overlays/generic-kubernetes/cronjob.yaml](overlays/generic-kubernetes/cronjob.yaml):
 
 ```
-kubectl create secret generic rf-risklist-ingest-secrets --namespace recorded-future --from-file=rf-api-token=<path/to/rf-token.txt> --from-file=chronicle-ingestion-auth.json=<path/to/ingestion-auth.json>
+kubectl create secret generic rf-risklist-ingest-secrets --namespace recorded-future --from-file=rf-api-token=<path/to/rf-token.txt> --from-file=chronicle-service-account.json=<path/to/chronicle-service-account.json>
 ```
 
 This overlay points `RECORDED_FUTURE_SECRET_FILE` and `CHRONICLE_SERVICE_ACCOUNT_FILE` at the mounted files. Any secret in this integration can be supplied that way: set `<VARIABLE>_FILE` and the script reads the file instead of calling Google Secret Manager. Trailing newlines are stripped.
@@ -148,7 +150,7 @@ kind: ConfigMap
 metadata:
   name: rf-risklist-ingest-config
 data:
-  CHRONICLE_CUSTOMER_ID: "<your customer ID>"
+  CHRONICLE_API_URL: "<your Chronicle API URL>"
 ```
 
 Then deploy with `kubectl apply -k deploy/kubernetes/overlays/local`.
@@ -171,7 +173,7 @@ patches:
   - path: configmap.yaml
 ```
 
-Alongside it, a `serviceaccount.yaml` setting `iam.gke.io/gcp-service-account` to your Google service account, and a `configmap.yaml` setting `CHRONICLE_CUSTOMER_ID` plus the `RECORDED_FUTURE_SECRET` and `CHRONICLE_SERVICE_ACCOUNT` Secret Manager paths for your project.
+Alongside it, a `serviceaccount.yaml` setting `iam.gke.io/gcp-service-account` to your Google service account, and a `configmap.yaml` setting `CHRONICLE_API_URL` plus the `RECORDED_FUTURE_SECRET` and `CHRONICLE_SERVICE_ACCOUNT` Secret Manager paths for your project.
 
 For anything beyond a test, prefer the same idea one level up: keep that overlay in your own private repository and consume this one as a remote base, so your values live under your own change control.
 

@@ -6,4 +6,4 @@ data:
   # Paths of the two secrets inside the container, populated from the
   # rf-risklist-ingest-secrets Secret mounted in cronjob.yaml.
   RECORDED_FUTURE_SECRET_FILE: "/var/run/secrets/recorded-future/rf-api-token"
-  CHRONICLE_SERVICE_ACCOUNT_FILE: "/var/run/secrets/recorded-future/chronicle-ingestion-auth.json"
+  CHRONICLE_SERVICE_ACCOUNT_FILE: "/var/run/secrets/recorded-future/chronicle-service-account.json"
