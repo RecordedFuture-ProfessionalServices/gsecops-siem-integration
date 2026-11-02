@@ -23,5 +23,5 @@ spec:
                 items:
                   - key: rf-api-token
                     path: rf-api-token
-                  - key: chronicle-ingestion-auth.json
-                    path: chronicle-ingestion-auth.json
+                  - key: chronicle-service-account.json
+                    path: chronicle-service-account.json

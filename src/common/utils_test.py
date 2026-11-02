@@ -107,6 +107,27 @@ class TestUtilsFromCommon(unittest.TestCase):
     with self.assertRaisesRegex(RuntimeError, "Set test or test_FILE."):
       utils.get_env_var("test", required=True, is_secret=True)
 
+  @mock.patch(
+      "{}.utils.get_value_from_secret_manager".format(INGESTION_SCRIPTS_PATH))
+  @mock.patch.dict("{}.utils.os.environ".format(INGESTION_SCRIPTS_PATH),
+                   {"test": " "})
+  def test_get_env_var_optional_secret_unset(
+      self, mocked_get_value_from_secret_manager):
+    """Test case to verify that an optional secret that is unset or blank returns the default.
+
+    Args:
+      mocked_get_value_from_secret_manager (mock.Mock): Mocked
+      get_value_from_secret_manager() function.
+
+    Asserts:
+      get_env_var() returns the default and does not call the Google Secret
+      Manager.
+    """
+    self.assertIsNone(utils.get_env_var("test", required=False, is_secret=True))
+    self.assertIsNone(
+        utils.get_env_var("missing", required=False, is_secret=True))
+    mocked_get_value_from_secret_manager.assert_not_called()
+
   @mock.patch.dict("{}.utils.os.environ".format(INGESTION_SCRIPTS_PATH),
                    {"POLL_INTERVAL": "-10"})
   def test_get_last_run_at_invalid(self):

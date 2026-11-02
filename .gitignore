@@ -18,6 +18,7 @@ src/.env.yml
 # Credential material used when deploying. Never commit these.
 .env
 ingestion-auth.json
+chronicle-service-account.json
 *-credentials.json
 *.pem
 *.key
