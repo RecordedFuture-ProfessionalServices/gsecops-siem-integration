@@ -98,7 +98,7 @@ gcloud iam service-accounts add-iam-policy-binding \
   --member="serviceAccount:$PROJECT_ID.svc.id.goog[recorded-future/rf-risklist-ingest]"
 ```
 
-To run without a service account key, skip the `chronicle-service-account-key` secret, remove `CHRONICLE_SERVICE_ACCOUNT` from your overlay's `configmap.yaml`, and grant `rf-ingest` the `Chronicle API Editor` role on the project bound to your SecOps instance instead. The job then calls the Chronicle API as the Workload Identity service account.
+To run without a service account key, skip the `chronicle-service-account-key` secret, set `CHRONICLE_SERVICE_ACCOUNT: ""` in your overlay's `configmap.yaml`, and grant `rf-ingest` the `Chronicle API Editor` role on the project bound to your SecOps instance instead. The job then calls the Chronicle API as the Workload Identity service account.
 
 Then add an overlay carrying your project's values, as described in [Keeping your own values out of this repository](#keeping-your-own-values-out-of-this-repository), and apply it:
 
